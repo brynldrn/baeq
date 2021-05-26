@@ -1,0 +1,35 @@
+$component: ".intro";
+
+#{$component} {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0 rem(16);
+  margin: 70% rem(20) 0;
+  width: calc(100% - #{rem(40)});
+
+  &__phrase,
+  &__me {
+    grid-column: 1 / span 5;
+    line-height: 150%;
+    margin: 0 rem(20);
+  }
+
+  &__phrase {
+    color: var(--primary-light);
+    display: block;
+    font-size: rem(16);
+    font-weight: bold;
+    margin-bottom: rem(20);
+    text-transform: uppercase;
+  }
+
+  &__me {
+    color: var(--primary-light);
+    font-size: rem(20);
+
+    > span,
+    > strong {
+      color: var(--primary-orange);
+    }
+  }
+}

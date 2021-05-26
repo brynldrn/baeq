@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Intro from './components/intro'
+import Marker from './components/marker'
 import Navigation from './components/navigation'
 
 export default function Home() {
@@ -11,6 +13,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navigation/>
+      <Intro/>
+      <Marker/>
     </>
   )
 }
