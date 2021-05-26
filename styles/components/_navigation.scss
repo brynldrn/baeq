@@ -1,0 +1,110 @@
+$component: ".navigation";
+
+#{$component} {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0 rem(20);
+  overflow: hidden;
+  padding: rem(20) 0;
+  width: calc(100% - #{rem(40)});
+
+  &__logo {
+    a {
+      color: var(--primary-orange);
+      font-family: 'Fira Mono', monospace;
+      font-size: rem(25);
+      font-weight: bold;
+    }
+  }
+
+  &__links {
+    button {
+      background-color: transparent;
+      border: none;
+      color: var(--primary-light);
+      cursor: pointer;
+      outline: none;
+
+      span:first-child {
+        transition: all 300ms ease;
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+        margin-right: rem(-20);
+        transform: rotate(180deg);
+        transition: all 300ms ease;
+      }
+
+      &.--active {
+        span:first-child {
+          margin-left: rem(-20);
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        span:nth-child(2) {
+          margin-right: 0;
+          opacity: 1;
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+
+  &__drawer {
+    background-color: rgba(var(--primary-black), 0);
+    height: 100vh;
+    left: 0;
+    margin-top: rem(70);
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: all 300ms ease;
+    width: 100vw;
+    z-index: zindex(modal);
+
+    > ul {
+      align-items: flex-end;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      height: 100%;
+      margin: 0 rem(20) 0;
+      padding: 0;
+
+      li {
+        margin-bottom: rem(10);
+        transform: translateX(150%);
+        transition: transform 600ms cubic-bezier(.21,.39,.22,.1);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:nth-child(2) {
+          transition-delay: 300ms;
+        }
+      }
+
+      li > a {
+        color: var(--primary-yellow);
+        font-family: 'Fira Mono', monospace;
+        font-size: rem(40);
+        font-weight: bold;
+      }
+    }
+
+    &.--active {
+      background-color: rgba(var(--primary-black), 0.8);
+      pointer-events: all;
+
+      ul li {
+        transform: translateX(0);
+      }
+    }
+  }
+} 
