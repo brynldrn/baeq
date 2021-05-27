@@ -1,11 +1,9 @@
 $component: ".intro";
 
 #{$component} {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0 rem(16);
-  margin: 50% rem(20) 0;
-  width: calc(100% - #{rem(40)});
+  @include grid;
+
+  margin-top: 50%;
 
   &__phrase,
   &__me {

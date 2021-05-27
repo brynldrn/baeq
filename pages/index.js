@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Intro from './components/intro'
 import Marker from './components/marker'
 import Navigation from './components/navigation'
+import Works from './components/works'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Navigation/>
       <main>
         <Intro/>
+        <Works/>
       </main>
       <Marker/>
     </>

@@ -58,6 +58,14 @@ $mq-breakpoints: (
   }
 }
 
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0 rem(16);
+  margin: 0 rem(20);
+  width: calc(100% - #{rem(40)});
+}
+
 //-----------------------------------------------------------------------
 //  ASPECT-RATIO
 //  usage:
