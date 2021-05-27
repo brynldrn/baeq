@@ -84,6 +84,21 @@ $component: ".navigation";
       list-style: none;
       margin: 0 rem(20) 0;
       padding: 0;
+      position: relative;
+
+      &::before {
+        background-color: var(--primary-black);
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        transition: all 300ms ease;
+        width: 100%;
+      }
 
       li {
         margin-bottom: rem(10);
@@ -110,6 +125,10 @@ $component: ".navigation";
     &.--active {
       background-color: rgba(var(--primary-black), 0.8);
       pointer-events: all;
+
+      ul::before {
+        opacity: 0.8;
+      }
 
       ul li {
         transform: translateX(0);

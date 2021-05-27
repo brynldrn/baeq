@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Bryan Aldrin E Quinalayo &ndash; Full Stack Web Developer</title>
+        <title>Home | Bryan Aldrin E Quinalayo &ndash; Full Stack Web Developer</title>
         <meta name="description" content="Professional Portfolio" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
         <link rel="icon" href="/favicon.ico" />
