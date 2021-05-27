@@ -25,7 +25,7 @@ export default function Home({ projects }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { data } = await client.query({
     query: gql`
       {
