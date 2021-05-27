@@ -2,9 +2,9 @@ import Head from 'next/head'
 import Intro from './components/intro'
 import Marker from './components/marker'
 import Navigation from './components/navigation'
-import Works from './components/works'
 import { gql } from "@apollo/client";
 import client from '../apollo-client';
+import Link from 'next/link';
 
 export default function Home({ projects }) {
   return (
@@ -18,7 +18,30 @@ export default function Home({ projects }) {
       <Navigation/>
       <main>
         <Intro/>
-        <Works projects={projects}/>
+        <section className="works">
+          <div className="works__wrapper">
+            <h1 className="works__header">Works</h1>
+            
+            {
+              projects.map(({ id, name, year, imageCap }, key) => (
+                <Link href="/works/test" key={key}>
+                  <article className="works__project" id={id}>
+                    <figure>
+                      <picture>
+                        <img src={imageCap.url} alt="Project Image" />
+                      </picture>
+                    </figure>
+                    <div className="works__project-caption">
+                      <span className="works__project-name">{ name }</span>
+                      <span className="works__project-year">{ year }</span>
+                    </div>
+                  </article>
+                </Link>
+              ))
+            }
+
+          </div>
+        </section>
       </main>
       <Marker/>
     </>
