@@ -3,8 +3,10 @@ import Intro from './components/intro'
 import Marker from './components/marker'
 import Navigation from './components/navigation'
 import Works from './components/works'
+import { gql } from "@apollo/client";
+import client from '../apollo-client';
 
-export default function Home() {
+export default function Home({ projects }) {
   return (
     <>
       <Head>
@@ -16,9 +18,32 @@ export default function Home() {
       <Navigation/>
       <main>
         <Intro/>
-        <Works/>
+        <Works projects={projects}/>
       </main>
       <Marker/>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      {
+        projects(orderBy: year_DESC) {
+          id,
+          name,
+          year,
+          imageCap {
+            url
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      projects: data.projects,
+    },
+ };
 }
