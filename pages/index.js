@@ -26,7 +26,7 @@ export default function Home({ projects }) {
             
             {
               projects.map(({ id, name, year, imageCap }, key) => (
-                <Link href="/works/test" key={key}>
+                <Link href={`/works/${id}`} key={key}>
                   <article className="works__project" id={id}>
                     <figure>
                       <picture>
@@ -71,5 +71,5 @@ export async function getServerSideProps() {
     props: {
       projects: data.projects,
     },
- };
+  };
 }

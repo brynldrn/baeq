@@ -1,0 +1,42 @@
+$component: ".work";
+
+#{$component} {
+  @include grid;
+
+  &__navigation {
+    grid-column: 1 / span 5;
+    margin-top: rem(30);
+
+    a {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+
+      svg {
+        display: inline-block;
+        margin-right: rem(10);
+      }
+    }
+  }
+
+  &__header {
+    grid-column: 1 / span 5;
+    margin-top: rem(30);
+
+    &-eyebrow {
+      color: var(--primary-yellow);
+      text-transform: uppercase;
+    }
+
+    &-title {
+      color: var(--primary-light);
+      margin: 0;
+    }
+  }
+
+  &__body {
+    color: var(--primary-light);
+    grid-column: 1 / span 5;
+    margin-top: rem(30);
+  }
+}
