@@ -24,6 +24,7 @@ $component: ".works";
 
     @include desktop {
       flex-basis: 100%;
+      font-size: rem(26);
     }
   }
 
@@ -83,12 +84,20 @@ $component: ".works";
       width: 100%;
       padding: rem(10);
       z-index: 11;
+
+      @include desktop {
+        font-size: rem(20);
+      }
     }
 
     @include desktop {
       flex-basis: 45%;
       margin-bottom: rem(40);
       margin-top: 0;
+    }
+
+    @include desktop-large {
+      flex-basis: 49%;
     }
   }
 }

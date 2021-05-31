@@ -9,6 +9,10 @@ $component: ".marker";
   position: fixed;
   width: calc(100vw - #{rem(20)});
 
+  @include desktop-large {
+    left: rem(100);
+  }
+
   > i:first-child {
     background-color: var(--primary-orange);
     border-radius: 50%;

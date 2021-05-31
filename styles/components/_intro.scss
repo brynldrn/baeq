@@ -17,6 +17,10 @@ $component: ".intro";
     font-weight: bold;
     margin-bottom: rem(20);
     text-transform: uppercase;
+
+    @include desktop {
+      font-size: rem(26);
+    }
   }
 
   &__me {
@@ -26,6 +30,10 @@ $component: ".intro";
     > span,
     > strong {
       color: var(--primary-orange);
+    }
+
+    @include desktop {
+      font-size: rem(32);
     }
   }
 }
