@@ -66,6 +66,16 @@ $mq-breakpoints: (
   gap: 0 rem(16);
   margin: 0 rem(20);
   width: calc(100% - #{rem(40)});
+
+  @include tablet {
+    margin: 0 rem(40);
+    width: calc(100% - #{rem(80)});
+  }
+
+  @include desktop {
+    margin: 0 rem(60);
+    width: calc(100% - #{rem(120)});
+  }
 }
 
 //-----------------------------------------------------------------------

@@ -6,6 +6,12 @@ $component: ".works";
   &__wrapper {
     grid-column: 1 / span 5;
     margin: rem(50) rem(20);
+
+    @include desktop {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
   }
 
   &__header {
@@ -15,6 +21,10 @@ $component: ".works";
     font-weight: bold;
     margin-bottom: rem(20);
     text-transform: uppercase;
+
+    @include desktop {
+      flex-basis: 100%;
+    }
   }
 
   &__project {
@@ -22,6 +32,12 @@ $component: ".works";
     display: block;
     position: relative;
     width: 100%;
+
+    &:hover {
+      #{$component}__project-caption {
+        color: var(--primary-light);
+      }
+    }
 
     &::before {
       background: linear-gradient(to top, var(--primary-black) 4%, rgba(0,0,0,0) 100%);
@@ -36,7 +52,11 @@ $component: ".works";
     }
 
     & + & {
-      margin-top: rem(30)
+      margin-top: rem(30);
+
+      @include desktop {
+        margin-top: 0;
+      }
     }
 
     figure {
@@ -59,9 +79,16 @@ $component: ".works";
       justify-content: space-between;
       left: 0;
       position: absolute;
+      transition: all 300ms ease;
       width: 100%;
       padding: rem(10);
       z-index: 11;
+    }
+
+    @include desktop {
+      flex-basis: 45%;
+      margin-bottom: rem(40);
+      margin-top: 0;
     }
   }
 }

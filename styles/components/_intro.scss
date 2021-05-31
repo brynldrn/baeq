@@ -3,8 +3,6 @@ $component: ".intro";
 #{$component} {
   @include grid;
 
-  margin-top: 50%;
-
   &__phrase,
   &__me {
     grid-column: 1 / span 5;

@@ -1,0 +1,34 @@
+$component: '.footer';
+
+#{$component} {
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  padding: rem(20) 0;
+  text-align: center;
+  width: 100%;
+
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 0 0 rem(20);
+    padding: 0;
+
+    li + li {
+      margin-left: rem(10);
+    }
+
+    li > a {
+      color: var(--primary-orange);
+    }
+  }
+
+  span {
+    color: var(--primary-light);
+    display: block;
+    font-size: rem(12);
+    text-transform: lowercase;
+    font-weight: 100;
+  }
+}

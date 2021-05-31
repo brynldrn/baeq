@@ -5,8 +5,10 @@ import Navigation from './components/navigation'
 import { gql } from "@apollo/client";
 import client from '../apollo-client';
 import Link from 'next/link';
+import Footer from './components/footer';
 
 export default function Home({ projects }) {
+
   return (
     <>
       <Head>
@@ -44,6 +46,7 @@ export default function Home({ projects }) {
         </section>
       </main>
       <Marker/>
+      <Footer/>
     </>
   )
 }
