@@ -1,8 +1,6 @@
 import { getAllWorks, getById } from '../../lib/works';
 import Head from 'next/head';
 import Link from 'next/link';
-import Navigation from '../components/navigation';
-import Footer from '../components/footer';
 import ReactMarkdown from 'react-markdown';
 
 export default function Work({ work }) {
@@ -17,7 +15,6 @@ export default function Work({ work }) {
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Navigation/>
     <main className="work">
       <div className="work__navigation">
         <Link href="/">
@@ -32,7 +29,6 @@ export default function Work({ work }) {
         <ReactMarkdown>{ longMd }</ReactMarkdown>
       </div>
     </main>
-    <Footer/>
     </>
   );
 }
