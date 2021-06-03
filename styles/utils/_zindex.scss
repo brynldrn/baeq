@@ -1,6 +1,7 @@
 /** z-index ordering */
 $z-index: (
   beneath: -1,
+  default: 0,
   above: 2,
   modal: 9001, // it's over 9000
 );

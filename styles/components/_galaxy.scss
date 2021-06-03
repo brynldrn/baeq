@@ -1,0 +1,146 @@
+$component: ".galaxy";
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes logo {
+  0% {
+      width: 18em;        
+      transform: translate(-50%, -50%) scale(2.75);
+      opacity: 1;
+  }
+  50% {
+      opacity: 1;
+      width: 18em;      
+  }
+  100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+      width: 18em;
+  }
+}
+
+@keyframes socials {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+#{$component} {
+  height: 100vh;
+  width: 100%;
+  z-index: zindex(default);
+
+  .star {
+    background-color: var(--primary-white);
+    height: rem(1);
+    position: absolute;
+    width: rem(1);
+    z-index: 1;
+  }
+
+  &__intro {
+    animation: intro 5s ease-out 1s;
+    color: var(--intro-blue);
+    display: block;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: rem(30);
+    font-weight: 400;
+    left: 50%;
+    margin: 0 auto;
+    max-width: rem(300);
+    opacity: 0;
+    position: absolute;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    width: 100%;
+    z-index: 1;
+
+    @include tablet {
+      max-width: rem(600);
+    }
+  }
+
+  &__logo {
+    animation: logo 9s ease-out 9s;
+    animation-fill-mode: forwards;
+    color: var(--logo-yellow);
+    left: 50%;
+    margin: auto;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 1;
+    
+    span {
+      display: block;
+      font-family: 'sf_distant_galaxy_outlineRg';
+      font-size: 220%;
+      font-style: normal;
+      font-weight: normal;
+    }
+  }
+
+  &__details {
+    animation: socials .3s ease-out 18s;
+    animation-fill-mode: forwards;
+    color: var(--primary-light);
+    display: block;
+    font-size: rem(12);
+    margin-top: rem(10);
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  &__socials {
+    animation: socials .3s ease-out 18.5s;
+    animation-fill-mode: forwards;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style-type: none;
+    margin: rem(20) 0 0;
+    opacity: 0;
+    padding: 0;
+    pointer-events: none;
+    transform: scale(1.5);
+    width: 100%;
+
+    > li {
+      display: block;
+      
+      &:not(:first-child) {
+        margin-left: rem(5);
+      }
+
+      a {
+        font-size: rem(30);
+      }
+    }
+
+    @include tablet {
+      transform: scale(1.3);
+    }
+  }
+}
