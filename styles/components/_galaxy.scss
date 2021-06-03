@@ -140,6 +140,8 @@ $logoScale: 2.75;
       font-size: 220%;
       font-style: normal;
       font-weight: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     @include tablet {
