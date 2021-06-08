@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { gql } from "@apollo/client";
 import client from '../apollo-client';
-import Galaxy from './components/galaxy';
+import Opening from '../components/opening';
+import About from '../components/about';
 
 export default function Home({ projects }) {
 
@@ -26,7 +27,13 @@ export default function Home({ projects }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Galaxy />
+        <section className="galaxy">
+          <Opening />
+          <About />
+          <section className="works container">
+            <h1><code>works</code></h1>
+          </section>
+        </section>
       </main>
     </>
   )

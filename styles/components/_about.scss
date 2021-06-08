@@ -1,4 +1,4 @@
-$component: ".works";
+$component: ".about";
 
 #{$component} {
   color: var(--logo-yellow);
@@ -6,5 +6,9 @@ $component: ".works";
   
   h1 {
     text-align: center;
+  }
+
+  p {
+    text-align: justify;
   }
 }
