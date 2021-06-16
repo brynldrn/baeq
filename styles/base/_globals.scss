@@ -47,6 +47,7 @@ body {
 
 .container {
   margin-bottom: rem(40);
+  overflow: hidden;
   padding: 0 rem(40);
 
   &:last-of-type {
