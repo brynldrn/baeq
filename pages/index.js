@@ -3,8 +3,15 @@ import { gql } from "@apollo/client";
 import client from '../apollo-client';
 import Opening from '../components/opening';
 import About from '../components/about';
+import Work from '../components/work';
+import Aos from 'aos';
+import { useEffect } from 'react';
 
 export default function Home({ projects }) {
+
+  useEffect(() => {
+    Aos.init();
+  });
 
   return (
     <>
@@ -32,6 +39,15 @@ export default function Home({ projects }) {
           <About />
           <section className="works container">
             <h1><code>works</code></h1>
+            <div className="works__container">
+              {
+                projects.map(({ imageCap, name, year }, key) => {
+                  return (
+                    <Work key={key} index={key} imageCap={imageCap.url} name={name} year={year} />
+                  )
+                })
+              }
+            </div>
           </section>
         </section>
       </main>
@@ -39,7 +55,7 @@ export default function Home({ projects }) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       {

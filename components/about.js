@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="about container">
+    <section data-aos="fade-right" className="about container">
       <h1><code>whoami</code></h1>
       <p>Hi! I'm Bryan, a Full Stack Web Developer from the Philippines. 🇵🇭</p>
       <p>

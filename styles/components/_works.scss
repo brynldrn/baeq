@@ -2,9 +2,66 @@ $component: ".works";
 
 #{$component} {
   color: var(--logo-yellow);
+  padding-bottom: rem(50);
   transition: all 300ms ease;
+
+  @include desktop {
+    padding: rem(50);
+  }
   
   h1 {
     text-align: center;
+  }
+
+  &__container {
+    @include desktop {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      > * {
+        flex-basis: 49%;
+      }
+    }
+  }
+
+  &__work {
+    margin-bottom: rem(30);
+
+    &-media {
+      @include aspect-ratio(341, 175);
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 95%;
+      }
+    }
+
+    &-year {
+      bottom: initial;
+      display: block;
+      left: initial;
+      margin: 0;
+      padding-left: rem(60);
+      text-align: left;
+      transform: rotate(90deg) translate(32px, -40px);
+
+      @include tablet {
+        transform: rotate(90deg) translate(35px, -25px);
+      }
+
+      &::before {
+        background-color: var(--logo-yellow);
+        content: "";
+        display: block;
+        height: rem(1);
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: rem(45);
+      }
+    }
   }
 }

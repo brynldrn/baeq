@@ -9,7 +9,6 @@
 
 html,
 body {
-  background: linear-gradient(180deg, rgba(0,0,0,1) 77%, rgba(3,6,19,1) 100%);
   font-family: 'Raleway', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   margin: 0;
@@ -21,14 +20,22 @@ body {
 }
 
 body {
+  max-height: 100vh;
+  max-width: 100vw;
   overflow: hidden;
 
   &.--animated {
+    max-height: none;
     overflow-y: visible;
   }
+
+  ::-moz-selection { background: var(--logo-yellow); }
+  ::selection { background: var(--logo-yellow); }
 }
 
 .galaxy {
+  background: linear-gradient(180deg, rgba(0,0,0,1) 77%, rgba(3,6,19,1) 100%);
+
   .star {
     background-color: var(--primary-white);
     height: rem(1);
