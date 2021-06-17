@@ -6,6 +6,7 @@ import About from '../components/about';
 import Work from '../components/work';
 import Aos from 'aos';
 import { useEffect } from 'react';
+import { RellaxWrapper } from 'react-rellax-wrapper'
 
 export default function Home({ projects }) {
 
@@ -37,7 +38,9 @@ export default function Home({ projects }) {
       <main>
         <section className="galaxy">
           <Opening />
-          <About />
+          <RellaxWrapper speed={4} center={false}>
+            <About />
+          </RellaxWrapper>
           <section className="works container">
             <h1><code>works</code></h1>
             <div className="works__container">
