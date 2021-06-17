@@ -20,14 +20,6 @@ body {
 }
 
 body {
-  max-height: 100vh;
-  max-width: 100vw;
-  overflow: hidden;
-
-  &.--animated {
-    max-height: none;
-    overflow-y: visible;
-  }
 
   ::-moz-selection { background: var(--logo-yellow); }
   ::selection { background: var(--logo-yellow); }
