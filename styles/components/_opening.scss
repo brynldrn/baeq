@@ -116,7 +116,7 @@ $logoScale: 2.75;
 
   &__logo {
     // animation: logo 9s ease-out 9s;
-    animation-fill-mode: forwards;
+    // animation-fill-mode: forwards;
     color: var(--logo-yellow);
     left: 50%;
     line-height: 200%;
@@ -130,6 +130,8 @@ $logoScale: 2.75;
     transition: all 300ms ease;
     width: 100%;
     z-index: 1;
+    transform: translate(-50%, -50%) scale(2.75);
+    opacity: 1;
     
     span {
       display: block;
