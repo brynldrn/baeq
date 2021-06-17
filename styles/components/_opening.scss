@@ -87,6 +87,7 @@ $logoScale: 2.75;
 #{$component} {
   height: 100vh;
   overflow: hidden;
+  position: relative;
   width: 100%;
   z-index: zindex(default);
 
@@ -114,7 +115,7 @@ $logoScale: 2.75;
   }
 
   &__logo {
-    animation: logo 9s ease-out 9s;
+    // animation: logo 9s ease-out 9s;
     animation-fill-mode: forwards;
     color: var(--logo-yellow);
     left: 50%;
