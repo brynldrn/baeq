@@ -18,6 +18,7 @@ export default function Home({ projects }) {
       <Head>
         <title>Home | Bryan Aldrin E Quinalayo &ndash; Full Stack Web Developer</title>
         <meta name="description" content="Professional Portfolio" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
         <link
             rel="preload"
