@@ -86,6 +86,7 @@ $logoScale: 2.75;
 
 #{$component} {
   height: 100vh;
+  overflow: hidden;
   width: 100%;
   z-index: zindex(default);
 
