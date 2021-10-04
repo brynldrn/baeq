@@ -53,6 +53,11 @@ export default function Home({ projects }) {
               }
             </div>
           </section>
+          <section className="footer container">
+            <em>anything before 2017 are all email templates and Salesforce: Marketing Cloud works.</em>
+            <p>made with ❤️</p>
+            <span>2021 &copy; <a href="https://baeq.dev">BAEQ</a></span>
+          </section>
         </section>
       </main>
     </>
