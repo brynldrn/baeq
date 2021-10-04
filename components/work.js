@@ -3,7 +3,7 @@ import Carousel from 'react-multi-carousel'
 export default function Work({ imageCap, year, index, gallery }) {
   const responsive = {
     desktop: {
-      breakpoint: { max: 1320, min: 1000 },
+      breakpoint: { max: 9999, min: 1000 },
       items: 1,
       slidesToSlide: 1 // optional, default to 1.
     },
