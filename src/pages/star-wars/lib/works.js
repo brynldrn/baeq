@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 import client from '../apollo-client';
 
 export async function getAllWorks() {
@@ -9,12 +9,10 @@ export async function getAllWorks() {
           id
         }
       }
-    `,
+    `
   });
 
-  console.log(data)
-
-  return data.projects.map(({ id }) => { 
+  return data.projects.map(({ id }) => {
     return {
       params: {
         id
@@ -43,7 +41,7 @@ export async function getById(id = null) {
     `,
     variables: {
       id
-    },
+    }
   });
 
   return data;

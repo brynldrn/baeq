@@ -22,14 +22,15 @@ export default function Work({ imageCap, year, index, gallery }) {
   return (
     <article data-aos={`fade-up-${index % 2 === 0 ? 'left' : 'right'}`} className="works__work">
       <div className="works__work-media">
-        <Carousel autoPlay={true} arrows={false} ssr={true} infinite={true} responsive={responsive}>
+        <Carousel autoPlay={true} arrows={false} ssr={true}
+          infinite={true} responsive={responsive}>
           <picture>
-            <img src={imageCap} alt={`Gallery Image 1`} />
+            <img src={imageCap} alt={'Gallery Image 1'} />
           </picture>
           {
             gallery.map(({ url }, key) => (
-              <picture>
-                <img src={url} key={key} alt={`Gallery Image ${key + 2}`} />
+              <picture key={key} >
+                <img src={url} alt={`Gallery Image ${key + 2}`} />
               </picture>
             ))
           }
