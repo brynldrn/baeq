@@ -1,0 +1,26 @@
+.page {
+  @apply relative pt-[90px] pl-[160px] pr-[20px] overflow-hidden rounded-[5px];
+
+  background: linear-gradient(to bottom,white 29px,#00b0d7 1px);
+  background-size: 100% 30px;
+
+  -webkit-box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+  -moz-box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+  -ms-box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+  -o-box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+  box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+}
+
+.page:before {
+  @apply block absolute z-[1] top-0 left-[140px] h-full w-[1px] bg-[#db4034];
+
+  content:'';
+}
+
+.page .content {
+  @apply font-sans text-pastel-black;
+}
+
+.page .content p {
+  @apply mt-8 ml-8 mb-0 leading-[33px] text-[30px];
+}

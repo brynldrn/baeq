@@ -2,7 +2,7 @@ import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-  uri: 'https://api-ap-northeast-1.graphcms.com/v2/cjqxhy3af88o801dnxok0ru3c/master',
+  uri: 'https://api-ap-northeast-1.graphcms.com/v2/cjqxhy3af88o801dnxok0ru3c/master'
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -14,7 +14,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : "",
+      authorization: token ? `Bearer ${token}` : ''
     }
   }
 });

@@ -8,15 +8,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Zig';
-  src: url('/fonts/zig/Zig.woff2') format('woff2'),
-      url('/fonts/zig/Zig.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 body {
   max-height: 100vh;
   max-width: 100vw;
@@ -31,6 +22,11 @@ body {
   main#star-wars {
     ::-moz-selection { background: var(--logo-yellow); }
     ::selection { background: var(--logo-yellow); }
+  }
+
+  svg {
+    width: auto;
+    height: auto;
   }
 }
 

@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Always Together';
+  src: url('/fonts/always-together/AlwaysTogether.woff2') format('woff2'),
+      url('/fonts/always-together/AlwaysTogether.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Always Together';
+  src: url('/fonts/always-together/AlwaysTogether.woff2') format('woff2'),
+      url('/fonts/always-together/AlwaysTogether.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import './components/Page/Page.css'
