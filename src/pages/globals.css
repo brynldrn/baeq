@@ -20,4 +20,13 @@
   font-display: swap;
 }
 
-@import './components/Page/Page.css'
+@import '../components/Page/Page.css';
+
+body::-moz-selection,
+body::selection {
+  @apply bg-red-500;
+}
+
+html {
+  @apply scroll-smooth;
+}

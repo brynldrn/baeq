@@ -22,5 +22,5 @@
 }
 
 .page .content p {
-  @apply mt-8 ml-8 mb-0 leading-[33px] text-[30px];
+  @apply mt-0 mb-0 leading-[33px] text-[30px];
 }
