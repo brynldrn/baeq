@@ -8,7 +8,7 @@
   font-style: normal;
 }
 
-body {
+body[data-aos-easing="ease"] {
   max-height: 100vh;
   max-width: 100vw;
   overflow: hidden;
