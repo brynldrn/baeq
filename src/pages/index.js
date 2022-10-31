@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion'
-import NotificationBar from '../components/NotificationBar/NotificationBar';
-import MenuBar from '../components/MenuBar/MenuBar';
 import Projects from '../components/Projects/Projects';
+import MainLayout from '../layouts/MainLayout';
 
 export default function Home() {
   return (
@@ -12,7 +11,7 @@ export default function Home() {
         <meta name="description" content="Professional Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       </Head>
-      <main className='relative'>
+      <MainLayout>
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: 0, pointerEvents: 'none' }}
@@ -20,7 +19,7 @@ export default function Home() {
             duration: 1,
             delay: 3
           }}
-          className="bg-black text-white h-screen w-full relative z-[999999]"
+          className="bg-black text-white h-screen w-full relative z-10"
         >
           <motion.div 
             initial={{ opacity: 0 }}
@@ -31,10 +30,8 @@ export default function Home() {
             <div className='border-2 border-white px-4 py-2 rounded-full'>Bryan Aldrin E. Quinalayo</div>
           </motion.div>
         </motion.div>
-        <NotificationBar /> 
-        <MenuBar />
         <Projects />
-      </main>
+      </MainLayout>
     </>
   )
 }
