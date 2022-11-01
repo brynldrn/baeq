@@ -1,0 +1,111 @@
+@use 'sass:math';
+
+/** breakpoint vars (for mixins, css styling) | mobile first */
+$mobile: 375;
+$tablet: 768;
+$desktop: 1024;
+$desktop-large: 1440;
+$grid:1880;
+
+/** for sass-mq  */
+$mq-breakpoints: (
+  mobile: rem($mobile),
+  tablet: rem($tablet),
+  desktop: rem($desktop),
+  desktop-large: rem($desktop-large),
+  gridmax: rem($grid)
+);
+
+//-----------------------------------------------------------------------
+//  BREAKPOINTS
+//  usage:
+//    @include tablet {
+//      ...your styles here
+//    }
+//-----------------------------------------------------------------------
+
+@mixin desktop-large {
+  @include mq($from: $desktop-large) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include mq($from: $desktop) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include mq($from: $tablet ) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @include mq($from: $tablet, $until: $desktop - 1) {
+    @content;
+  }
+}
+
+@mixin mobile-tablet {
+  @include mq($until: $desktop - 1) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @include mq($until: $tablet - 1) {
+    @content;
+  }
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0 rem(16);
+  margin: 0 rem(20);
+  width: calc(100% - #{rem(40)});
+
+  @include tablet {
+    margin: 0 rem(40);
+    width: calc(100% - #{rem(80)});
+  }
+
+  @include desktop {
+    margin: 0 rem(60);
+    width: calc(100% - #{rem(120)});
+  }
+
+  @include desktop-large {
+    margin: 0 auto;
+    width: 100%;
+    max-width: rem(1200);
+  }
+}
+
+//-----------------------------------------------------------------------
+//  ASPECT-RATIO
+//  usage:
+//    @include aspect-ratio($width, $height)
+//-----------------------------------------------------------------------
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: math.div($height, $width) * 100%;
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,11 @@
+$component: ".footer";
+
+#{$component} {
+  color: var(--logo-yellow);
+  padding-bottom: rem(40);
+  text-align: center;
+
+  p {
+    margin: rem(20) 0 0;
+  }
+}

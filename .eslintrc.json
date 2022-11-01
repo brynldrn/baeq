@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "rules": {
+    "quotes": ["error", "single"],
+    "prefer-const": "error",
+    "react/jsx-max-props-per-line": [2, { "maximum": 3, "when": "always" }],
+    "comma-dangle": ["error", "never"],
+    "indent": ["error", 2],
+    "jsx-quotes": ["error", "prefer-double"],
+    "react/self-closing-comp": ["error", {
+      "component": true,
+      "html": true
+    }],
+    "eol-last": ["error", "always"],
+    "no-undefined": "error",
+    "no-unused-vars": ["error", { "destructuredArrayIgnorePattern": "^_" }],
+    "object-curly-spacing": ["error", "always"],
+    "no-trailing-spaces": "error",
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 0 }],
+    "no-unsafe-optional-chaining": "error",
+    "no-undef": "error"
+  }
+}

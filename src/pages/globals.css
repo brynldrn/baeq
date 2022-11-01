@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Always Together';
+  src: url('/fonts/always-together/AlwaysTogether.woff2') format('woff2'),
+      url('/fonts/always-together/AlwaysTogether.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Super Legend Boy';
+  src: url('/fonts/super-legend-boy/Super-Legend-Boy.woff2') format('woff2'),
+      url('/fonts/super-legend-boy/Super-Legend-Boy.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nintendo Switch UI';
+  src: url('/fonts/nintendo-switch-ui/NintendoSwitchUI.woff2') format('woff2'),
+      url('/fonts/nintendo-switch-ui/NintendoSwitchUI.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+body::-moz-selection,
+body::selection {
+  @apply bg-red-500;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body,
+body * {
+  @apply font-sans;
+}
+
+body {
+  background-image: linear-gradient(to right top, #173849, #173143, #172a3d, #172436, #171d2f, #181b2f, #1a1a2e, #1c182d, #221a33, #281c38, #2f1e3d, #371f41) !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+}
