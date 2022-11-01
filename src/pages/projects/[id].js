@@ -20,7 +20,7 @@ export default function Project({ projectDetails }) {
     if (isSmallDesktop) {
       return {
         width: 420,
-        height: 520,
+        height: 520
       }
     }
 
@@ -34,7 +34,7 @@ export default function Project({ projectDetails }) {
     if (isSmallDesktop) {
       return {
         width: 720,
-        height: 520,
+        height: 520
       }
     }
 
@@ -52,11 +52,11 @@ export default function Project({ projectDetails }) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       </Head>
       <MainLayout>
-        <section className='relative h-full flex flex-wrap justify-center items-center content-center pt-36'>
+        <section className="relative h-full flex flex-wrap justify-center items-center content-center pt-36">
           <motion.div
-            className='w-full h-full pb-36'
+            className="w-full h-full pb-36"
             initial={{
-              marginTop: 60,
+              marginTop: 60
             }}
             animate={{
               marginTop: 0,
@@ -65,25 +65,28 @@ export default function Project({ projectDetails }) {
               }
             }}
           >
-            <div className='mb-7 mx-3'>
-              <span className='block text-center text-white font-sans text-4xl'>{name}</span>
-              <span className='block text-white text-center mt-2'>{`${year} - ${position}`}</span>
+            <div className="mb-7 mx-3">
+              <span className="block text-center text-white font-sans text-4xl">{name}</span>
+              <span className="block text-white text-center mt-2">{`${year} - ${position}`}</span>
             </div>
-            <motion.div 
-              className='mx-auto rounded-xl overflow-hidden relative'
+            <motion.div
+              className="mx-auto rounded-xl overflow-hidden relative"
               initial={initialValues}
               animate={animateValues}
             >
-              <Image src={imageCap?.url} width="100%" height="100%" layout='fill' objectFit='contain' />
+              <Image src={imageCap?.url} width="100%" height="100%"
+                layout="fill" objectFit="contain" alt="Project Preview" />
             </motion.div>
-            <div className='px-5 mt-5 text-white lg:max-w-[720px] lg:px-0 lg:mx-auto'>
-              <div className='flex justify-evenly mb-7 lg:justify-start'>
-                <ButtonLink label='Visit Site' className='mr-5' url={url} />
-                <ButtonLink buttonFace='B' label='Home' internal url='/' />
+            <div className="px-5 mt-5 text-white lg:max-w-[720px] lg:px-0 lg:mx-auto">
+              <div className="flex justify-evenly mb-7 lg:justify-start">
+                <ButtonLink label="Visit Site" className="mr-5" url={url} />
+                <ButtonLink buttonFace="B" label="Home" internal
+                  url="/" />
               </div>
               <ReactMarkdown components={{
-                h3: ({ children }) => <h3 className='mt-5'>{children}</h3>,
-                a: ({ children, href }) => <a href={href} className='text-red-500 underline' target="_blank">{children}</a>
+                h3: ({ children }) => <h3 className="mt-5">{children}</h3>,
+                a: ({ children, href }) => <a href={href} className="text-red-500 underline" target="_blank"
+                  rel="noreferrer">{children}</a>
               }}>
                 {longMd}
               </ReactMarkdown>

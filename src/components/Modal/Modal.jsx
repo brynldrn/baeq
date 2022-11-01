@@ -20,23 +20,23 @@ export default function Modal({ isOpen = false, setIsOpen, children, link, isInt
               className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center"
               initial={{
                 opacity: 0,
-                scale: 0.75,
+                scale: 0.75
               }}
               animate={{
                 opacity: 1,
                 scale: 1,
                 transition: {
-                  ease: "easeOut",
-                  duration: 0.15,
-                },
+                  ease: 'easeOut',
+                  duration: 0.15
+                }
               }}
               exit={{
                 opacity: 0,
                 scale: 0.75,
                 transition: {
-                  ease: "easeIn",
-                  duration: 0.15,
-                },
+                  ease: 'easeIn',
+                  duration: 0.15
+                }
               }}
             >
               <div
@@ -48,7 +48,7 @@ export default function Modal({ isOpen = false, setIsOpen, children, link, isInt
                 <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start">
                     <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-orange-100 sm:mx-0 sm:h-10 sm:w-10">
-                      <AlertTriangle color='orange' />
+                      <AlertTriangle color="orange" />
                     </div>
                     <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                       <Dialog.Title
@@ -79,14 +79,14 @@ export default function Modal({ isOpen = false, setIsOpen, children, link, isInt
                       >
                         Proceed
                       </a>
-                  </Link>
+                    </Link>
                   ) : (
                     <a
                       href={link}
                       target="_blank"
                       tabIndex={0}
                       className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => setIsOpen(false)} rel="noreferrer"
                     >
                       Proceed
                     </a>
