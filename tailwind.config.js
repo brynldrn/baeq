@@ -35,7 +35,11 @@ module.exports = {
       },
       animation: {
         blink: 'blink 1s linear infinite'
-      }
+      },
+      screens: {
+        'xs': '375px',
+        ...defaultTheme.screens,
+      },
     }
   },
   plugins: []

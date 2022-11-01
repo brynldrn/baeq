@@ -2,8 +2,11 @@ import Head from 'next/head';
 import { motion } from 'framer-motion'
 import Projects from '../components/Projects/Projects';
 import MainLayout from '../layouts/MainLayout';
+import client from '../../apollo-client'
+import { gql } from '@apollo/client';
 
-export default function Home() {
+export default function Home({ projects }) {
+  
   return (
     <>
       <Head>
@@ -30,8 +33,32 @@ export default function Home() {
             <div className='border-2 border-white px-4 py-2 rounded-full'>Bryan Aldrin E. Quinalayo</div>
           </motion.div>
         </motion.div>
-        <Projects />
+        <Projects projects={projects} />
       </MainLayout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      {
+        projects(orderBy: year_DESC) {
+          id,
+          name,
+          year,
+          imageCap {
+            url
+          },
+          position,
+        }
+      }
+    `
+  });
+
+  return {
+    props: {
+      projects: data.projects
+    }
+  };
 }

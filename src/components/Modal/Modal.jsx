@@ -14,7 +14,7 @@ export default function Modal({ isOpen = false, setIsOpen, children, link, isInt
               className="fixed inset-0 transition-opacity"
               aria-hidden="true"
             >
-              <div className="absolute inset-0 bg-neutral-800 opacity-75" />
+              <div className="absolute inset-0 bg-blur [backdrop-filter:blur(10px)]" />
             </div>
             <motion.div
               className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center"

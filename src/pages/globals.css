@@ -45,6 +45,8 @@ body * {
 
 body {
   background-image: linear-gradient(to right top, #173849, #173143, #172a3d, #172436, #171d2f, #181b2f, #1a1a2e, #1c182d, #221a33, #281c38, #2f1e3d, #371f41) !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   width: 100%;
   height: 100%;
 }
