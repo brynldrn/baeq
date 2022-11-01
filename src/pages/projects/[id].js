@@ -65,7 +65,7 @@ export default function Project({ projectDetails }) {
               }
             }}
           >
-            <div className='mb-7'>
+            <div className='mb-7 mx-3'>
               <span className='block text-center text-white font-sans text-4xl'>{name}</span>
               <span className='block text-white text-center mt-2'>{`${year} - ${position}`}</span>
             </div>
