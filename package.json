@@ -25,6 +25,7 @@
     "react-multi-carousel": "^2.6.3",
     "react-portal": "^4.2.2",
     "react-rellax-wrapper": "^1.0.6",
+    "react-responsive": "^9.0.0",
     "react-spring": "^9.5.4",
     "react-use": "^17.4.0",
     "react-waypoint": "^10.3.0",

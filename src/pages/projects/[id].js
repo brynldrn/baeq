@@ -1,14 +1,44 @@
 import MainLayout from '../../layouts/MainLayout';
 import { motion } from 'framer-motion'
 import Head from 'next/head';
-import { ChevronLeft } from 'lucide-react';
-import Link from 'next/link';
 import Image from 'next/image'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import ExternalLink from '../../components/ButtonLink/ButtonLink';
 import ButtonLink from '../../components/ButtonLink/ButtonLink';
+import { useMediaQuery } from 'react-responsive';
+import { useMemo, useState } from 'react';
 
 export default function Project() {
+  const isSmallDesktop = useMediaQuery({
+    minWidth: 1024
+  })
+
+  const initialValues = useMemo(() => {
+    if (isSmallDesktop) {
+      return {
+        width: 420,
+        height: 520,
+      }
+    }
+
+    return {
+      width: 280,
+      height: 336
+    }
+  }, [isSmallDesktop])
+
+  const animateValues = useMemo(() => {
+    if (isSmallDesktop) {
+      return {
+        width: 720,
+        height: 520,
+      }
+    }
+
+    return {
+      width: 340,
+      height: 300
+    }
+  }, [isSmallDesktop])
+
   return (
     <>
       <Head>
@@ -18,19 +48,6 @@ export default function Project() {
       </Head>
       <MainLayout>
         <section className='relative'>
-          {/* <motion.div 
-            className='fixed top-5 left-4 z-10'
-            initial={{
-              opacity: 0
-            }}
-            animate={{
-              opacity: 1
-            }}
-          >
-            <Link href="/">
-              <a className='flex items-center'><div className='rounded-full bg-white mr-3'><ChevronLeft color='black' /></div> <span className='text-white'>Back</span></a>
-            </Link>
-          </motion.div> */}
           <motion.div
             className='w-full pt-[calc(100vh/5)] pb-[90px]'
             animate={{
@@ -46,20 +63,14 @@ export default function Project() {
             </div>
             <motion.div 
               className='mx-auto rounded-xl overflow-hidden relative'
-              initial={{
-                width: 280,
-                height: 336
-              }}
-              animate={{
-                width: 340,
-                height: 300
-              }}
+              initial={initialValues}
+              animate={animateValues}
             >
               <Image src="https://picsum.photos/seed/picsum/1920/720" width="100%" height="100%" layout='fill' objectFit='cover' />
             </motion.div>
-            <div className='px-5 mt-5 text-white'>
-              <div className='flex justify-evenly mb-7'>
-                <ButtonLink label='Visit Site' />
+            <div className='px-5 mt-5 text-white lg:max-w-[720px] lg:px-0 lg:mx-auto'>
+              <div className='flex justify-evenly mb-7 lg:justify-start'>
+                <ButtonLink label='Visit Site' className='mr-5' />
                 <ButtonLink buttonFace='B' label='Home' internal url='/' />
               </div>
               <p className='mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nostrum similique impedit, itaque consectetur blanditiis aspernatur quia temporibus labore laborum minima, maxime deleniti corrupti aperiam, sunt sint iste. Facilis, accusamus.</p>
