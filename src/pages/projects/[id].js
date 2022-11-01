@@ -8,13 +8,17 @@ import { useMemo } from 'react';
 import { gql } from '@apollo/client';
 import client from '../../../apollo-client';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper';
 
+// Import Swiper styles
+import 'swiper/css';
 export default function Project({ projectDetails }) {
   const isSmallDesktop = useMediaQuery({
     minWidth: 1024
   })
   const { project } = projectDetails;
-  const { imageCap, longMd, url, name, year, position } = project
+  const { imageCap, longMd, url, name, year, position, gallery } = project
 
   const initialValues = useMemo(() => {
     if (isSmallDesktop) {
@@ -43,6 +47,8 @@ export default function Project({ projectDetails }) {
       height: 300
     }
   }, [isSmallDesktop])
+
+  console.log('gallery :>> ', gallery);
 
   return (
     <>
@@ -93,6 +99,31 @@ export default function Project({ projectDetails }) {
               {/* <div className='flex justify-start mt-4'>
                 <ButtonLink buttonFace='X' label='Back' internal url='/' />
               </div> */}
+              {gallery?.length && (
+                <>
+                  <h3 className="font-bold mt-6">Gallery</h3>
+                  <Swiper
+                    className="gallery-swiper mt-8"
+                    autoplay={{
+                      delay: 1500,
+                      disableOnInteraction: false
+                    }}
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    updateOnWindowResize
+                    modules={[Autoplay]}
+                  >
+                    {gallery?.length && gallery.map((galleryImage) => (
+                      <SwiperSlide key={galleryImage?.id}>
+                        <div>
+                          <Image src={galleryImage?.url} width="100%" height="100%"
+                            layout="responsive" objectFit="contain" alt="Project Gallery Image" />
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </>
+              )}
             </div>
           </motion.div>
         </section>
@@ -140,7 +171,8 @@ export async function getStaticProps({ params }) {
           },
           longMd,
           gallery {
-            id
+            id,
+            url
           },
           position
         }
