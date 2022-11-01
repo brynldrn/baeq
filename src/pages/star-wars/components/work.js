@@ -28,7 +28,7 @@ export default function Work({ imageCap, year, index, gallery }) {
             <img src={imageCap} alt={'Gallery Image 1'} />
           </picture>
           {
-            gallery.map(({ url }, key) => (
+            gallery?.length && gallery.map(({ url }, key) => (
               <picture key={key} >
                 <img src={url} alt={`Gallery Image ${key + 2}`} />
               </picture>
