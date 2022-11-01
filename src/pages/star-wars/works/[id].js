@@ -1,7 +1,7 @@
-import { getAllWorks, getById } from '../lib/works';
 import Head from 'next/head';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+import { getAllWorks, getById } from '../../../lib/works';
 
 export default function Work({ work }) {
   const { name, year, longMd } = work.project;

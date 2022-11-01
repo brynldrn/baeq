@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import client from '../../../../apollo-client';
+import client from '../../apollo-client';
 
 export async function getAllWorks() {
   const { data } = await client.query({
