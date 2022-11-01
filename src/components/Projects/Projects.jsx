@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Keyboard, Mousewheel } from 'swiper/core'
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion'
 import { useMediaQuery } from 'react-responsive';
 
 // Import Swiper styles
@@ -17,8 +19,21 @@ export default function Projects({ projects }) {
     setActiveIndex(swiper?.activeIndex || 0)
   }, [])
 
+  SwiperCore.use([Keyboard, Mousewheel]);
+
   return (
-    <section className="absolute top-0 left-0 w-full h-screen flex flex-wrap justify-center items-center content-center">
+    <motion.section
+      className="absolute top-0 left-0 w-full h-screen flex flex-wrap justify-center items-center content-center"
+      initial={{
+        marginTop: 60
+      }}
+      animate={{
+        marginTop: 0,
+        transition: {
+          duration: 0.5
+        }
+      }}
+    >
       <div className="mb-7 basis-full mx-3">
         <span className="block text-center text-white font-sans text-4xl">{projects[activeIndex].name}</span>
         <span className="block text-white text-center mt-2">{`${projects[activeIndex].year} - ${projects[activeIndex].position}`}</span>
@@ -33,6 +48,7 @@ export default function Projects({ projects }) {
           updateOnWindowResize
           observer
           onSlideChange={onSlideChange}
+          mousewheel
         >
           {
             projects?.length && projects.map((project) => (
@@ -47,6 +63,6 @@ export default function Projects({ projects }) {
           }
         </Swiper>
       )}
-    </section>
+    </motion.section>
   )
 }
