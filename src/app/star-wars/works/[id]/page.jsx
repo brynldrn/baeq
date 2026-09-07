@@ -27,7 +27,7 @@ export default async function StarWarsProjectPage({ params }) {
       </header>
       {project.imageCap?.url ? (
         <div className="star-wars-project__media">
-          <Image src={project.imageCap.url} alt="" fill priority sizes="(max-width: 900px) 92vw, 900px" />
+          <Image src={project.imageCap.url} alt="" fill preload sizes="(max-width: 900px) 92vw, 900px" />
         </div>
       ) : null}
       <article><ReactMarkdown>{project.longMd}</ReactMarkdown></article>

@@ -145,7 +145,7 @@ export default function PortfolioScene({ projects, children }) {
                       alt={`${project.name} project preview`}
                       fill
                       sizes="(max-width: 767px) 76vw, 390px"
-                      priority={active}
+                      loading={active ? 'eager' : 'lazy'}
                     />
                   ) : <SystemVisual index={index} />}
                   <div className="visual-shade" />

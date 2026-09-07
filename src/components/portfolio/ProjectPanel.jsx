@@ -48,7 +48,7 @@ export default function ProjectPanel({ project }) {
         <div className="panel-layout">
           <div className="panel-media">
             {project.imageCap?.url ? (
-              <Image src={project.imageCap.url} alt={`${project.name} project preview`} fill sizes="(max-width: 800px) 92vw, 48vw" priority />
+              <Image src={project.imageCap.url} alt={`${project.name} project preview`} fill sizes="(max-width: 800px) 92vw, 48vw" preload />
             ) : (
               <div className="panel-system" aria-hidden="true"><span /><span /><span /></div>
             )}
