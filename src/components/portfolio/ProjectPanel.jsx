@@ -14,6 +14,7 @@ export default function ProjectPanel({ project }) {
   const reduceMotion = useReducedMotion()
 
   useEffect(() => {
+    const previousFocus = document.activeElement
     closeRef.current?.focus()
 
     const onKeyDown = (event) => {
@@ -21,7 +22,10 @@ export default function ProjectPanel({ project }) {
     }
 
     window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
+    return () => {
+      window.removeEventListener('keydown', onKeyDown)
+      if (previousFocus instanceof HTMLElement) previousFocus.focus()
+    }
   }, [router])
 
   return (

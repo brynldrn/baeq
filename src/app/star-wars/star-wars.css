@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Star Jedi";
+  src: url("/fonts/starjedi/sfdistantgalaxyoutline-xoeo-webfont.woff2") format("woff2");
+  font-display: swap;
+}
+
+html:has(.star-wars),
+body:has(.star-wars) {
+  overflow: auto;
+  background: #02040b;
+}
+
+.star-wars {
+  min-height: 100vh;
+  overflow: hidden;
+  color: #e8edf8;
+  background:
+    radial-gradient(circle at 15% 25%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 80% 70%, #9fc5ff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 45% 85%, #fff 0 1px, transparent 1.5px),
+    #02040b;
+  background-size: 83px 83px, 127px 127px, 173px 173px;
+}
+
+.star-wars a { color: inherit; }
+
+.star-wars__opening {
+  display: grid;
+  min-height: 100svh;
+  place-content: center;
+  padding: 2rem;
+  text-align: center;
+  perspective: 600px;
+}
+
+.star-wars__intro {
+  margin-bottom: 12vh;
+  color: #58d8f7;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  animation: star-intro 1.2s ease-out both;
+}
+
+.star-wars__logo {
+  display: grid;
+  color: #f8dc45;
+  font-family: "Star Jedi", sans-serif;
+  font-size: clamp(2.5rem, 9vw, 7rem);
+  line-height: .88;
+  letter-spacing: .03em;
+  text-shadow: 0 0 30px #f8dc4540;
+  animation: star-logo 1.6s .2s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.star-wars__logo span { font-size: .48em; }
+.star-wars__role { margin-top: 2rem; color: #aeb8cb; letter-spacing: .12em; text-transform: uppercase; }
+.star-wars__skip { margin-top: 4rem; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; }
+
+.star-wars__about {
+  display: grid;
+  min-height: 100svh;
+  place-content: center;
+  max-width: 48rem;
+  margin: auto;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.star-wars__about > p,
+.star-wars__kicker { color: #58d8f7; letter-spacing: .18em; text-transform: uppercase; }
+.star-wars__about h2 { margin: 1rem 0 3rem; color: #f8dc45; font-size: clamp(2.5rem, 8vw, 6rem); line-height: .9; }
+.star-wars__crawl { font-size: clamp(1.25rem, 3vw, 2rem); line-height: 1.65; transform: rotateX(12deg); }
+.star-wars__crawl p + p { margin-top: 1.5rem; }
+
+.star-wars__work { max-width: 78rem; margin: auto; padding: 8rem 1.5rem; }
+.star-wars__work h2 { margin: .4rem 0 3rem; font-size: clamp(2.5rem, 7vw, 5rem); }
+.star-wars__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.star-wars__card { overflow: hidden; border: 1px solid #b7c7e124; border-radius: 1rem; background: #0b1428b8; text-decoration: none; transition: transform .25s ease, border-color .25s ease; }
+.star-wars__card:hover { border-color: #58d8f7; transform: translateY(-5px); }
+.star-wars__media { position: relative; display: block; aspect-ratio: 16 / 9; background: linear-gradient(135deg, #111c37, #050811); }
+.star-wars__media img { object-fit: cover; }
+.star-wars__card-copy { display: grid; gap: .35rem; padding: 1rem 1.2rem 1.25rem; }
+.star-wars__card-copy span { color: #58d8f7; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; }
+.star-wars__card-copy strong { font-size: 1.2rem; }
+
+.star-wars__footer { display: flex; justify-content: space-between; gap: 1rem; max-width: 78rem; margin: auto; padding: 2rem 1.5rem 4rem; color: #aeb8cb; }
+
+.star-wars-project { max-width: 60rem; margin: auto; padding: 2rem clamp(1.25rem, 5vw, 4rem) 6rem; background: transparent; }
+.star-wars-project nav { margin-bottom: clamp(4rem, 12vh, 8rem); }
+.star-wars-project header p { color: #58d8f7; letter-spacing: .18em; text-transform: uppercase; }
+.star-wars-project h1 { max-width: 14ch; margin: .5rem 0; color: #f8dc45; font-size: clamp(2.8rem, 8vw, 6rem); line-height: .92; }
+.star-wars-project header span { color: #aeb8cb; }
+.star-wars-project__media { position: relative; aspect-ratio: 16 / 9; margin: 4rem 0; overflow: hidden; border: 1px solid #b7c7e124; border-radius: 1rem; }
+.star-wars-project__media img { object-fit: cover; }
+.star-wars-project article { font-size: 1.08rem; line-height: 1.8; }
+.star-wars-project article > * + * { margin-top: 1.25rem; }
+.star-wars-project__link { display: inline-block; margin-top: 2rem; color: #58d8f7 !important; }
+
+@keyframes star-intro { from { opacity: 0; } }
+@keyframes star-logo { from { opacity: 0; transform: translateZ(220px); } }
+
+@media (max-width: 700px) {
+  .star-wars__grid { grid-template-columns: 1fr; }
+  .star-wars__footer { flex-direction: column; }
+  .star-wars__intro { margin-bottom: 8vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star-wars__intro,
+  .star-wars__logo { animation: none; }
+  .star-wars__card { transition: none; }
+}

@@ -1,3 +1,5 @@
+import { mergeFeaturedProjects } from './portfolio-projects.mjs'
+
 const endpoint = 'https://api-ap-northeast-1.graphcms.com/v2/cjqxhy3af88o801dnxok0ru3c/master'
 
 const query = `
@@ -73,4 +75,3 @@ export async function getPortfolioProject(id) {
   if (!id) return null
   return (await getPortfolioProjects()).find((project) => project.id === id) ?? null
 }
-import { mergeFeaturedProjects } from './portfolio-projects.mjs'

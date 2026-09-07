@@ -79,6 +79,7 @@ export default function PortfolioScene({ projects, children }) {
 
   return (
     <section className="portfolio-shell" onWheel={onWheel} aria-label="Selected portfolio work">
+      <div className="portfolio-background" inert={detailOpen} aria-hidden={detailOpen || undefined}>
       <div className="ambient ambient-one" aria-hidden="true" />
       <div className="ambient ambient-two" aria-hidden="true" />
       <div className="portfolio-grid" aria-hidden="true" />
@@ -119,20 +120,22 @@ export default function PortfolioScene({ projects, children }) {
           aria-label="Project orbit"
         >
           {projects.map((project, index) => {
-            const slot = orbitSlot(getOrbitOffset(index, activeIndex, projects.length))
+            const offset = getOrbitOffset(index, activeIndex, projects.length)
+            const slot = orbitSlot(offset)
             const active = slot === 'active'
+            const hidden = !active && Math.abs(offset) > 1
 
             return (
               <article
                 className="project-card glass"
                 data-orbit={slot}
-                aria-hidden={!active && Math.abs(getOrbitOffset(index, activeIndex, projects.length)) > 1}
+                aria-hidden={hidden || undefined}
                 key={project.id}
               >
                 {active ? (
                   <Link className="card-hit-area" href={`/projects/${project.id}`} aria-label={`Open ${project.name}`} />
                 ) : (
-                  <button className="card-hit-area" onClick={() => setActiveIndex(index)} aria-label={`Focus ${project.name}`} />
+                  <button className="card-hit-area" onClick={() => setActiveIndex(index)} disabled={hidden} aria-label={`Focus ${project.name}`} />
                 )}
 
                 <div className="project-visual">
@@ -181,6 +184,7 @@ export default function PortfolioScene({ projects, children }) {
       </nav>
 
       <div className="gesture-cue" aria-hidden="true"><Mouse size={15} /> Scroll or swipe</div>
+      </div>
       {children}
     </section>
   )
