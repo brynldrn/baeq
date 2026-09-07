@@ -1,12 +1,11 @@
 import Head from 'next/head'
-import { gql } from '@apollo/client';
 import Opening from './components/opening';
 import About from './components/about';
 import Work from './components/work';
 import Aos from 'aos';
 import { useEffect } from 'react';
 import { RellaxWrapper } from 'react-rellax-wrapper'
-import client from '../../../apollo-client';
+import { getProjects } from '../../lib/projects.mjs';
 
 export default function Home({ projects }) {
 
@@ -66,28 +65,9 @@ export default function Home({ projects }) {
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      {
-        projects(orderBy: year_DESC) {
-          id,
-          name,
-          year,
-          url,
-          imageCap {
-            url
-          },
-          gallery {
-            url
-          }
-        }
-      }
-    `
-  });
-
   return {
     props: {
-      projects: data.projects
+      projects: await getProjects()
     }
   };
 }

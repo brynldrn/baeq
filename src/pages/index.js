@@ -2,9 +2,8 @@ import Head from 'next/head';
 import { motion } from 'framer-motion'
 import Projects from '../components/Projects/Projects';
 import MainLayout from '../layouts/MainLayout';
-import client from '../../apollo-client'
-import { gql } from '@apollo/client';
 import { useLocalStorage } from 'react-use';
+import { getProjects } from '../lib/projects.mjs';
 
 export default function Home({ projects }) {
   const [animated, setAnimated] = useLocalStorage('animated-baeq', false)
@@ -47,25 +46,9 @@ export default function Home({ projects }) {
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      {
-        projects(orderBy: year_DESC) {
-          id,
-          name,
-          year,
-          imageCap {
-            url
-          },
-          position,
-        }
-      }
-    `
-  });
-
   return {
     props: {
-      projects: data.projects
+      projects: await getProjects()
     }
   };
 }

@@ -5,8 +5,7 @@ import Image from 'next/image'
 import ButtonLink from '../../components/ButtonLink/ButtonLink';
 import { useMediaQuery } from 'react-responsive';
 import { useMemo } from 'react';
-import { gql } from '@apollo/client';
-import client from '../../../apollo-client';
+import { getProject, getProjects } from '../../lib/projects.mjs';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper';
@@ -133,17 +132,7 @@ export default function Project({ projectDetails }) {
 }
 
 export async function getStaticPaths() {
-  const { data } = await client.query({
-    query: gql`
-      {
-        projects(orderBy: year_DESC) {
-          id
-        }
-      }
-    `
-  });
-
-  const paths = data.projects.map(({ id }) => {
+  const paths = (await getProjects()).map(({ id }) => {
     return {
       params: {
         id
@@ -158,34 +147,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const { data: projectDetails } = await client.query({
-    query: gql`
-      query Project($id: ID) {
-          project(where: { id: $id }) {
-          id,
-          name,
-          year,
-          url,
-          imageCap {
-            url
-          },
-          longMd,
-          gallery {
-            id,
-            url
-          },
-          position
-        }
-      }
-    `,
-    variables: {
-      id: params.id
-    }
-  });
+  const project = await getProject(params.id);
 
   return {
     props: {
-      projectDetails
+      projectDetails: { project }
     }
   }
 }
