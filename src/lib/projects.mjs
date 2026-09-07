@@ -64,3 +64,13 @@ export async function getProject(id) {
   if (!id) return null
   return (await getProjects()).find((project) => project.id === id) ?? null
 }
+
+export async function getPortfolioProjects() {
+  return mergeFeaturedProjects(await getProjects())
+}
+
+export async function getPortfolioProject(id) {
+  if (!id) return null
+  return (await getPortfolioProjects()).find((project) => project.id === id) ?? null
+}
+import { mergeFeaturedProjects } from './portfolio-projects.mjs'
