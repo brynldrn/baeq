@@ -20,6 +20,14 @@ const featured = [
     visual: 'system',
   },
   {
+    match: /bry\s*&\s*shai wedding website/i,
+    name: 'Bry & Shai Wedding Website',
+    year: '2025',
+    position: 'Husband',
+    summary: 'A personal wedding website bringing the story, details, and celebration together in one place.',
+    visual: 'image',
+  },
+  {
     match: /whoop/i,
     name: 'WHOOP Year in Review',
     year: '2021',
