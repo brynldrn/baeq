@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { getOrbitOffset, getSwipeDirection, isOrbitVisible, stepIndex } from '@/lib/orbit.mjs'
+import { getOrbitOffset, getSwipeDirection, getWheelDirection, isOrbitVisible, stepIndex } from '@/lib/orbit.mjs'
 
 const orbitSlot = (offset) => {
   if (offset === 0) return 'active'
@@ -32,6 +32,7 @@ export default function PortfolioScene({ projects, children }) {
   const initialIndex = Math.max(0, projects.findIndex(({ id }) => pathname === `/projects/${id}`))
   const [activeIndex, setActiveIndex] = useState(initialIndex)
   const lastWheelAt = useRef(0)
+  const wheelAccumulator = useRef({})
   const pointerStartY = useRef(0)
   const detailOpen = pathname.startsWith('/projects/')
 
@@ -69,14 +70,20 @@ export default function PortfolioScene({ projects, children }) {
   }, [detailOpen, move])
 
   const onWheel = (event) => {
-    if (detailOpen || Math.abs(event.deltaY) + Math.abs(event.deltaX) < 18) return
+    if (detailOpen) {
+      wheelAccumulator.current = {}
+      return
+    }
+
+    const direction = getWheelDirection(event, wheelAccumulator.current)
+    if (!direction) return
 
     event.preventDefault()
     const now = Date.now()
     if (now - lastWheelAt.current < 520) return
 
     lastWheelAt.current = now
-    move(event.deltaY + event.deltaX > 0 ? 1 : -1)
+    move(direction)
   }
 
   const onPointerUp = (event) => {

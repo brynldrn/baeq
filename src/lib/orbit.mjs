@@ -8,6 +8,38 @@ export function getSwipeDirection(startY, endY, threshold = 48) {
   return Math.abs(distance) < threshold ? 0 : distance < 0 ? 1 : -1
 }
 
+export function getWheelDirection({ deltaX = 0, deltaY = 0, deltaMode = 0, timeStamp }, accumulator = {}, threshold = 18) {
+  const timestamp = Number(timeStamp)
+  const previousTimestamp = Number(accumulator.timeStamp)
+  if (Number.isFinite(timestamp) && Number.isFinite(previousTimestamp) && (timestamp < previousTimestamp || timestamp - previousTimestamp > 160)) {
+    accumulator.value = 0
+    accumulator.direction = 0
+  }
+  if (Number.isFinite(timestamp)) accumulator.timeStamp = timestamp
+
+  const scale = deltaMode === 1 ? 18 : deltaMode === 2 ? 100 : 1
+  const x = (Number(deltaX) || 0) * scale
+  const y = (Number(deltaY) || 0) * scale
+  const dominant = Math.abs(y) >= Math.abs(x) ? y : x
+  if (!dominant) return 0
+
+  const direction = Math.sign(dominant)
+  if (deltaMode !== 0) {
+    accumulator.value = 0
+    accumulator.direction = 0
+    return direction
+  }
+
+  if (accumulator.direction && accumulator.direction !== direction) accumulator.value = 0
+  accumulator.direction = direction
+  accumulator.value = (Number(accumulator.value) || 0) + dominant
+  if (Math.abs(accumulator.value) < threshold) return 0
+
+  accumulator.value = 0
+  accumulator.direction = 0
+  return direction
+}
+
 export function installEarlyIntentCapture(target) {
   let direction = 0
   let pointerStartY = null
@@ -17,10 +49,43 @@ export function installEarlyIntentCapture(target) {
     event.preventDefault?.()
     event.stopImmediatePropagation?.()
   }
+  const wheelAccumulator = {}
+  const getDirection = ({ deltaX = 0, deltaY = 0, deltaMode = 0, timeStamp }) => {
+    const timestamp = Number(timeStamp)
+    const previousTimestamp = Number(wheelAccumulator.timeStamp)
+    if (Number.isFinite(timestamp) && Number.isFinite(previousTimestamp) && (timestamp < previousTimestamp || timestamp - previousTimestamp > 160)) {
+      wheelAccumulator.value = 0
+      wheelAccumulator.direction = 0
+    }
+    if (Number.isFinite(timestamp)) wheelAccumulator.timeStamp = timestamp
+
+    const scale = deltaMode === 1 ? 18 : deltaMode === 2 ? 100 : 1
+    const x = (Number(deltaX) || 0) * scale
+    const y = (Number(deltaY) || 0) * scale
+    const dominant = Math.abs(y) >= Math.abs(x) ? y : x
+    if (!dominant) return 0
+
+    const wheelDirection = Math.sign(dominant)
+    if (deltaMode !== 0) {
+      wheelAccumulator.value = 0
+      wheelAccumulator.direction = 0
+      return wheelDirection
+    }
+
+    if (wheelAccumulator.direction && wheelAccumulator.direction !== wheelDirection) wheelAccumulator.value = 0
+    wheelAccumulator.direction = wheelDirection
+    wheelAccumulator.value = (Number(wheelAccumulator.value) || 0) + dominant
+    if (Math.abs(wheelAccumulator.value) < 18) return 0
+
+    wheelAccumulator.value = 0
+    wheelAccumulator.direction = 0
+    return wheelDirection
+  }
   const onWheel = (event) => {
-    if (!hasShell() || Math.abs(event.deltaY) + Math.abs(event.deltaX) < 18) return
+    const wheelDirection = getDirection(event)
+    if (!hasShell() || !wheelDirection) return
     stop(event)
-    if (!direction) direction = event.deltaY + event.deltaX > 0 ? 1 : -1
+    if (!direction) direction = wheelDirection
   }
   const onPointerDown = (event) => {
     if (hasShell()) pointerStartY = event.clientY

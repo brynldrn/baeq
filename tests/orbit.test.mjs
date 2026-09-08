@@ -40,6 +40,45 @@ test('getSwipeDirection ignores taps and recognizes vertical swipes', () => {
   assert.equal(orbit.getSwipeDirection(420, 500), -1)
 })
 
+test('getWheelDirection normalizes line-mode wheels but ignores pixel jitter', () => {
+  assert.equal(typeof orbit.getWheelDirection, 'function')
+  assert.equal(orbit.getWheelDirection({ deltaY: 3, deltaX: 0, deltaMode: 1 }), 1)
+  assert.equal(orbit.getWheelDirection({ deltaY: 3, deltaX: 0, deltaMode: 0 }), 0)
+  assert.equal(orbit.getWheelDirection({ deltaY: 2, deltaX: -8, deltaMode: 1 }), -1)
+  assert.equal(orbit.getWheelDirection({ deltaY: 0, deltaX: 0, deltaMode: 1 }), 0)
+})
+
+test('getWheelDirection accumulates precision-trackpad pixels and resets on reversal', () => {
+  const accumulator = {}
+  assert.equal(orbit.getWheelDirection({ deltaY: 3, deltaX: 0, deltaMode: 0 }, accumulator), 0)
+  assert.equal(orbit.getWheelDirection({ deltaY: 3, deltaX: 0, deltaMode: 0 }, accumulator), 0)
+  assert.equal(orbit.getWheelDirection({ deltaY: 3, deltaX: 0, deltaMode: 0 }, accumulator), 0)
+  assert.equal(orbit.getWheelDirection({ deltaY: 3, deltaX: 0, deltaMode: 0 }, accumulator), 0)
+  assert.equal(orbit.getWheelDirection({ deltaY: 3, deltaX: 0, deltaMode: 0 }, accumulator), 0)
+  assert.equal(orbit.getWheelDirection({ deltaY: 3, deltaX: 0, deltaMode: 0 }, accumulator), 1)
+
+  assert.equal(orbit.getWheelDirection({ deltaY: 3, deltaX: 0, deltaMode: 0 }, {}), 0)
+  const reversal = {}
+  assert.equal(orbit.getWheelDirection({ deltaY: 12, deltaX: 0, deltaMode: 0 }, reversal), 0)
+  assert.equal(orbit.getWheelDirection({ deltaY: -3, deltaX: 0, deltaMode: 0 }, reversal), 0)
+  assert.equal(orbit.getWheelDirection({ deltaY: -3, deltaX: 0, deltaMode: 0 }, reversal), 0)
+  assert.equal(orbit.getWheelDirection({ deltaY: -3, deltaX: 0, deltaMode: 0 }, reversal), 0)
+  assert.equal(orbit.getWheelDirection({ deltaY: -3, deltaX: 0, deltaMode: 0 }, reversal), 0)
+  assert.equal(orbit.getWheelDirection({ deltaY: -3, deltaX: 0, deltaMode: 0 }, reversal), 0)
+  assert.equal(orbit.getWheelDirection({ deltaY: -3, deltaX: 0, deltaMode: 0 }, reversal), -1)
+})
+
+test('getWheelDirection resets stale pixel accumulation after an idle gap', () => {
+  const accumulator = {}
+  for (let index = 0; index < 3; index += 1) {
+    assert.equal(orbit.getWheelDirection({ deltaY: 3, deltaX: 0, deltaMode: 0, timeStamp: index * 16 }, accumulator), 0)
+  }
+
+  for (let index = 0; index < 3; index += 1) {
+    assert.equal(orbit.getWheelDirection({ deltaY: 3, deltaX: 0, deltaMode: 0, timeStamp: 240 + index * 16 }, accumulator), 0)
+  }
+})
+
 function createEventTarget(pathname = '/') {
   const listeners = new Map()
   return {
@@ -77,6 +116,74 @@ test('early wheel intent is buffered once and stopped during hydration handoff',
   assert.equal(capture.consume(), 0)
   assert.equal(event.prevented, true)
   assert.equal(event.stopped, true)
+})
+
+test('early wheel intent captures small line-mode mouse notches', () => {
+  const target = createEventTarget()
+  const capture = orbit.installEarlyIntentCapture(target)
+  const event = {
+    deltaY: 3,
+    deltaX: 0,
+    deltaMode: 1,
+    preventDefault() { this.prevented = true },
+    stopImmediatePropagation() { this.stopped = true },
+  }
+
+  target.dispatch('wheel', event)
+
+  assert.equal(capture.consume(), 1)
+  assert.equal(event.prevented, true)
+  assert.equal(event.stopped, true)
+})
+
+test('early wheel intent accumulates small precision-trackpad pixels', () => {
+  const target = createEventTarget()
+  const capture = orbit.installEarlyIntentCapture(target)
+
+  for (let index = 0; index < 5; index += 1) {
+    target.dispatch('wheel', {
+      deltaY: 3,
+      deltaX: 0,
+      deltaMode: 0,
+      preventDefault() { this.prevented = true },
+      stopImmediatePropagation() { this.stopped = true },
+    })
+  }
+
+  assert.equal(capture.consume(), 0)
+  target.dispatch('wheel', {
+    deltaY: 3,
+    deltaX: 0,
+    deltaMode: 0,
+    preventDefault() { this.prevented = true },
+    stopImmediatePropagation() { this.stopped = true },
+  })
+  assert.equal(capture.consume(), 1)
+})
+
+test('early wheel intent resets stale pixel accumulation after an idle gap', () => {
+  const target = createEventTarget()
+  const capture = orbit.installEarlyIntentCapture(target)
+
+  for (let index = 0; index < 3; index += 1) {
+    target.dispatch('wheel', {
+      deltaY: 3,
+      deltaX: 0,
+      deltaMode: 0,
+      timeStamp: index * 16,
+    })
+  }
+
+  for (let index = 0; index < 3; index += 1) {
+    target.dispatch('wheel', {
+      deltaY: 3,
+      deltaX: 0,
+      deltaMode: 0,
+      timeStamp: 240 + index * 16,
+    })
+  }
+
+  assert.equal(capture.consume(), 0)
 })
 
 test('early pointer intent buffers only vertical swipes beyond the threshold', () => {
