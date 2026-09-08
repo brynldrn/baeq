@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, BriefcaseBusiness, ChevronLeft, ChevronRight, Code2, Cpu, FileText, Layers3, Mouse, ShieldCheck, Sparkles, Users2 } from 'lucide-react'
+import { ArrowRight, BriefcaseBusiness, ChevronLeft, ChevronRight, Code2, Cpu, Layers3, Mouse, ShieldCheck, Sparkles, Users2 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -112,7 +112,6 @@ export default function PortfolioScene({ projects, children }) {
 
           <div className="profile-actions">
             <a href="https://www.linkedin.com/in/bryan-aldrin-quinalayo/" target="_blank" rel="noreferrer"><BriefcaseBusiness /> LinkedIn</a>
-            <a href="https://drive.google.com/file/d/15HbijRNzAn0zhxo-Dg2hyeqMyhoVGZV7/view?usp=drivesdk" target="_blank" rel="noreferrer"><FileText /> Get CV</a>
           </div>
         </section>
 
@@ -179,7 +178,6 @@ export default function PortfolioScene({ projects, children }) {
       <nav className="portfolio-nav glass" aria-label="Portfolio links">
         <a href="https://www.linkedin.com/in/bryan-aldrin-quinalayo/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><BriefcaseBusiness /></a>
         <a href="https://github.com/brynldrn" target="_blank" rel="noreferrer" aria-label="GitHub"><Code2 /></a>
-        <a href="https://drive.google.com/file/d/15HbijRNzAn0zhxo-Dg2hyeqMyhoVGZV7/view?usp=drivesdk" target="_blank" rel="noreferrer" aria-label="Curriculum vitae"><FileText /></a>
         <Link href="/star-wars" aria-label="Legacy Star Wars portfolio"><Sparkles /></Link>
       </nav>
 

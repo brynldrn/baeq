@@ -165,7 +165,7 @@
 
 .profile-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 
@@ -183,7 +183,6 @@
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
-.profile-actions a:last-child { border-color: transparent; background: var(--blue); color: #031018; }
 .profile-actions a:hover { background: var(--blue-deep); color: #fff; transform: translateY(-2px); }
 .profile-actions svg { width: 17px; }
 
