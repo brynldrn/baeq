@@ -86,7 +86,7 @@ body:has(.star-wars) {
   inset: 14% 8% 0;
   overflow: hidden;
   perspective: 420px;
-  perspective-origin: 50% 100%;
+  perspective-origin: 50% 35%;
   opacity: 0;
   animation: star-reveal .6s 18s forwards;
 }
@@ -101,7 +101,7 @@ body:has(.star-wars) {
   font-weight: 700;
   line-height: 1.5;
   text-align: justify;
-  transform: translateX(-50%) rotateX(23deg);
+  transform: translateX(-50%) rotateX(23deg) translateZ(0);
   transform-origin: 50% 100%;
   animation: star-crawl 42s linear 18s both;
 }
@@ -238,8 +238,8 @@ body:has(.star-wars) {
 @keyframes star-reveal { to { opacity: 1; } }
 
 @keyframes star-crawl {
-  from { top: 100%; transform: translate3d(-50%, 0, 0) rotateX(23deg); }
-  to { top: 100%; transform: translate3d(-50%, -310vh, -320px) rotateX(28deg); }
+  from { top: 100%; transform: translateX(-50%) rotateX(23deg) translateZ(0); }
+  to { top: -260%; transform: translateX(-50%) rotateX(23deg) translateZ(-320px); }
 }
 
 @media (max-width: 700px) {
