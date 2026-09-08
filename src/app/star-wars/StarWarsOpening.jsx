@@ -30,7 +30,7 @@ export default function StarWarsOpening() {
       </div>
 
       <p className="star-opening__intro">A long time ago, in a galaxy far,<br />far away…</p>
-      <h1 className="star-opening__logo"><span>Bryan Aldrin</span><span>Quinalayo</span></h1>
+      <h1 className="star-opening__logo"><span>BRYAN ALDRIN</span><span>QUINALAYO</span></h1>
 
       <div className="star-crawl">
         <div className="star-crawl__content">
