@@ -50,10 +50,12 @@ const featured = [
 ]
 
 export function mergeFeaturedProjects(cmsProjects) {
-  return featured.map(({ match, ...project }) => {
+  const usedIds = new Set()
+  const featuredProjects = featured.map(({ match, ...project }) => {
     if (!match) return { ...project, url: '', imageCap: null, gallery: [] }
 
     const cmsProject = cmsProjects.find(({ name = '' }) => match.test(name))
+    if (cmsProject) usedIds.add(cmsProject.id)
 
     return {
       ...cmsProject,
@@ -65,4 +67,6 @@ export function mergeFeaturedProjects(cmsProjects) {
       gallery: cmsProject?.gallery ?? [],
     }
   })
+
+  return [...featuredProjects, ...cmsProjects.filter(({ id }) => !usedIds.has(id))]
 }

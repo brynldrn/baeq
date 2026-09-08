@@ -57,7 +57,7 @@ export default function ProjectPanel({ project }) {
           <div className="panel-content">
             <p className="eyebrow">Selected work</p>
             <h1 id="project-panel-title">{project.name}</h1>
-            <p className="panel-summary">{project.summary}</p>
+            {project.summary ? <p className="panel-summary">{project.summary}</p> : null}
             <div className="panel-stack">{project.stack?.map((item) => <span key={item}>{item}</span>)}</div>
             <div className="project-markdown"><ReactMarkdown>{project.longMd}</ReactMarkdown></div>
             <div className="panel-actions">

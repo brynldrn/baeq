@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { getProjects } from '@/lib/projects.mjs'
+import StarWarsOpening from './StarWarsOpening'
 
 export const metadata = {
   title: 'Star Wars Portfolio | Bryan Aldrin Quinalayo',
@@ -12,48 +13,32 @@ export default async function StarWarsPage() {
 
   return (
     <main className="star-wars">
-      <section className="star-wars__opening" aria-labelledby="star-wars-title">
-        <p className="star-wars__intro">A long time ago, in a galaxy far, far away…</p>
-        <h1 id="star-wars-title" className="star-wars__logo">
-          <span>Bryan Aldrin</span>
-          Quinalayo
-        </h1>
-        <p className="star-wars__role">Full-stack engineer · Builder · Gamer</p>
-        <a className="star-wars__skip" href="#star-wars-work">Explore the archive ↓</a>
-      </section>
-
-      <section className="star-wars__about" aria-labelledby="star-wars-about">
-        <p>Episode MMXXI</p>
-        <h2 id="star-wars-about">A NEW PORTFOLIO</h2>
-        <div className="star-wars__crawl">
-          <p>From the Philippines, Bryan builds reliable products across frontend, backend, and cloud systems.</p>
-          <p>This preserved edition celebrates the original portfolio while the main experience looks ahead.</p>
-        </div>
-      </section>
+      <StarWarsOpening />
 
       <section id="star-wars-work" className="star-wars__work" aria-labelledby="star-wars-work-title">
-        <p className="star-wars__kicker">Transmission archive</p>
-        <h2 id="star-wars-work-title">Selected missions</h2>
+        <h2 id="star-wars-work-title"><code>works</code></h2>
         <div className="star-wars__grid">
           {projects.map((project) => (
-            <Link className="star-wars__card" href={`/star-wars/works/${project.id}`} key={project.id}>
-              <span className="star-wars__media">
-                {project.imageCap?.url ? (
-                  <Image src={project.imageCap.url} alt="" fill sizes="(max-width: 720px) 86vw, 38vw" />
-                ) : null}
-              </span>
-              <span className="star-wars__card-copy">
-                <span>{project.year}</span>
-                <strong>{project.name}</strong>
-              </span>
-            </Link>
+            <article className="legacy-project" key={project.id}>
+              <div className="legacy-project__media">
+                <div className="legacy-project__reel">
+                  {[project.imageCap, ...project.gallery].filter(Boolean).map((image, index) => (
+                    <span key={image.id ?? image.url}>
+                      <Image src={image.url} alt={`${project.name} gallery image ${index + 1}`} fill sizes="(max-width: 720px) 86vw, 42vw" />
+                    </span>
+                  ))}
+                </div>
+                <span className="legacy-project__year">{project.year}</span>
+              </div>
+              <h3><Link href={`/star-wars/works/${project.id}`}>{project.name}</Link></h3>
+            </article>
           ))}
         </div>
       </section>
 
       <footer className="star-wars__footer">
         <Link href="/">Return to the 2026 experience</Link>
-        <span>May the source be with you.</span>
+        <span>Made with ❤️ · May the source be with you.</span>
       </footer>
     </main>
   )

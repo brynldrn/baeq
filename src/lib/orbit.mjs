@@ -1,6 +1,11 @@
 export function stepIndex(index, direction, count) {
   if (count < 1) return 0
-  return Math.min(count - 1, Math.max(0, index + Math.sign(direction)))
+  return (index + Math.sign(direction) + count) % count
+}
+
+export function getSwipeDirection(startY, endY, threshold = 48) {
+  const distance = endY - startY
+  return Math.abs(distance) < threshold ? 0 : distance < 0 ? 1 : -1
 }
 
 export function getOrbitOffset(index, activeIndex, count) {

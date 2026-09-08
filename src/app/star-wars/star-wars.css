@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Raleway:wght@300;400;500;700&display=swap');
+
 @font-face {
   font-family: "Star Jedi";
   src: url("/fonts/starjedi/sfdistantgalaxyoutline-xoeo-webfont.woff2") format("woff2");
@@ -7,105 +9,251 @@
 html:has(.star-wars),
 body:has(.star-wars) {
   overflow: auto;
-  background: #02040b;
+  background: #000;
 }
 
 .star-wars {
   min-height: 100vh;
   overflow: hidden;
-  color: #e8edf8;
-  background:
-    radial-gradient(circle at 15% 25%, #fff 0 1px, transparent 1.5px),
-    radial-gradient(circle at 80% 70%, #9fc5ff 0 1px, transparent 1.5px),
-    radial-gradient(circle at 45% 85%, #fff 0 1px, transparent 1.5px),
-    #02040b;
-  background-size: 83px 83px, 127px 127px, 173px 173px;
+  background: linear-gradient(#000 72%, #030613);
+  color: #f6de4c;
+  font-family: "Raleway", sans-serif;
 }
 
 .star-wars a { color: inherit; }
 
-.star-wars__opening {
-  display: grid;
-  min-height: 100svh;
-  place-content: center;
-  padding: 2rem;
-  text-align: center;
-  perspective: 600px;
+.star-opening {
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+  background: #000;
 }
 
-.star-wars__intro {
-  margin-bottom: 12vh;
-  color: #58d8f7;
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  animation: star-intro 1.2s ease-out both;
+.star-field {
+  position: absolute;
+  inset: 0;
 }
 
-.star-wars__logo {
+.star-field i {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 4px #fff;
+  animation: star-twinkle 3s ease-in-out infinite alternate;
+}
+
+.star-opening__intro,
+.star-opening__logo,
+.star-crawl,
+.star-opening__skip {
+  position: absolute;
+  z-index: 2;
+}
+
+.star-opening__intro {
+  top: 30%;
+  left: 50%;
+  width: min(80%, 38rem);
+  margin: 0;
+  color: #4bd5ee;
+  font: 400 clamp(1.25rem, 3vw, 2rem)/1.25 "Times New Roman", serif;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  animation: star-intro 5s ease-out .5s both;
+}
+
+.star-opening__logo {
+  top: 48%;
+  left: 50%;
   display: grid;
-  color: #f8dc45;
+  width: 90%;
+  margin: 0;
+  color: #f6de4c;
   font-family: "Star Jedi", sans-serif;
-  font-size: clamp(2.5rem, 9vw, 7rem);
-  line-height: .88;
-  letter-spacing: .03em;
-  text-shadow: 0 0 30px #f8dc4540;
-  animation: star-logo 1.6s .2s cubic-bezier(.2,.8,.2,1) both;
+  font-size: clamp(2rem, 8vw, 7rem);
+  font-weight: 400;
+  line-height: .9;
+  text-align: center;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(5);
+  animation: star-logo 8s ease-out 5.4s both;
 }
 
-.star-wars__logo span { font-size: .48em; }
-.star-wars__role { margin-top: 2rem; color: #aeb8cb; letter-spacing: .12em; text-transform: uppercase; }
-.star-wars__skip { margin-top: 4rem; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; }
+.star-opening__logo span:first-child { font-size: .52em; }
 
-.star-wars__about {
-  display: grid;
-  min-height: 100svh;
-  place-content: center;
-  max-width: 48rem;
-  margin: auto;
-  padding: 6rem 2rem;
+.star-crawl {
+  inset: 14% 8% 0;
+  overflow: hidden;
+  perspective: 420px;
+  perspective-origin: 50% 100%;
+  opacity: 0;
+  animation: star-reveal .6s 12.8s forwards;
+}
+
+.star-crawl__content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: min(760px, 92%);
+  color: #f6de4c;
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: justify;
+  transform: translateX(-50%) rotateX(23deg);
+  transform-origin: 50% 100%;
+  animation: star-crawl 42s linear 12.8s both;
+}
+
+.star-crawl__content > p:first-child,
+.star-crawl__content h2 { text-align: center; }
+.star-crawl__content h2 { margin: .4rem 0 2.4rem; font-size: 1.45em; }
+.star-crawl__content p + p { margin-top: 1.6rem; }
+
+.star-opening__skip {
+  right: 1.5rem;
+  bottom: 1.5rem;
+  padding: .7rem;
+  font: 500 .7rem/1 "Fira Mono", monospace;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.star-wars__work {
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 7rem clamp(2.5rem, 8vw, 10rem);
+}
+
+.star-wars__work h2 {
+  margin: 0 0 4rem;
+  font: 500 clamp(2rem, 5vw, 4rem)/1 "Fira Mono", monospace;
   text-align: center;
 }
 
-.star-wars__about > p,
-.star-wars__kicker { color: #58d8f7; letter-spacing: .18em; text-transform: uppercase; }
-.star-wars__about h2 { margin: 1rem 0 3rem; color: #f8dc45; font-size: clamp(2.5rem, 8vw, 6rem); line-height: .9; }
-.star-wars__crawl { font-size: clamp(1.25rem, 3vw, 2rem); line-height: 1.65; transform: rotateX(12deg); }
-.star-wars__crawl p + p { margin-top: 1.5rem; }
+.star-wars__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(3rem, 8vw, 7rem) 5%;
+}
 
-.star-wars__work { max-width: 78rem; margin: auto; padding: 8rem 1.5rem; }
-.star-wars__work h2 { margin: .4rem 0 3rem; font-size: clamp(2.5rem, 7vw, 5rem); }
-.star-wars__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
-.star-wars__card { overflow: hidden; border: 1px solid #b7c7e124; border-radius: 1rem; background: #0b1428b8; text-decoration: none; transition: transform .25s ease, border-color .25s ease; }
-.star-wars__card:hover { border-color: #58d8f7; transform: translateY(-5px); }
-.star-wars__media { position: relative; display: block; aspect-ratio: 16 / 9; background: linear-gradient(135deg, #111c37, #050811); }
-.star-wars__media img { object-fit: cover; }
-.star-wars__card-copy { display: grid; gap: .35rem; padding: 1rem 1.2rem 1.25rem; }
-.star-wars__card-copy span { color: #58d8f7; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; }
-.star-wars__card-copy strong { font-size: 1.2rem; }
+.legacy-project { min-width: 0; }
 
-.star-wars__footer { display: flex; justify-content: space-between; gap: 1rem; max-width: 78rem; margin: auto; padding: 2rem 1.5rem 4rem; color: #aeb8cb; }
+.legacy-project__media {
+  position: relative;
+  margin-right: 2.5rem;
+}
 
-.star-wars-project { max-width: 60rem; margin: auto; padding: 2rem clamp(1.25rem, 5vw, 4rem) 6rem; background: transparent; }
-.star-wars-project nav { margin-bottom: clamp(4rem, 12vh, 8rem); }
-.star-wars-project header p { color: #58d8f7; letter-spacing: .18em; text-transform: uppercase; }
-.star-wars-project h1 { max-width: 14ch; margin: .5rem 0; color: #f8dc45; font-size: clamp(2.8rem, 8vw, 6rem); line-height: .92; }
-.star-wars-project header span { color: #aeb8cb; }
-.star-wars-project__media { position: relative; aspect-ratio: 16 / 9; margin: 4rem 0; overflow: hidden; border: 1px solid #b7c7e124; border-radius: 1rem; }
+.legacy-project__reel {
+  display: grid;
+  grid-auto-columns: 100%;
+  grid-auto-flow: column;
+  aspect-ratio: 341 / 175;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: #f6de4c transparent;
+  scrollbar-width: thin;
+}
+
+.legacy-project__reel > span {
+  position: relative;
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+
+.legacy-project__reel img { object-fit: cover; }
+
+.legacy-project__year {
+  position: absolute;
+  top: 0;
+  right: -2.2rem;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  font: 500 .72rem/1 "Fira Mono", monospace;
+  letter-spacing: .12em;
+  transform: rotate(90deg) translateX(100%);
+  transform-origin: top right;
+}
+
+.legacy-project__year::before {
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.legacy-project h3 {
+  margin: 1rem 2.5rem 0 0;
+  font: 500 clamp(.9rem, 1.5vw, 1.15rem)/1.35 "Fira Mono", monospace;
+}
+
+.legacy-project h3 a { text-decoration: none; }
+.legacy-project h3 a:hover { color: #fff; }
+
+.star-wars__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 82rem;
+  margin: auto;
+  padding: 2rem clamp(2.5rem, 8vw, 10rem) 5rem;
+  color: #f6de4c;
+  font: 400 .75rem/1.5 "Fira Mono", monospace;
+}
+
+.star-wars-project {
+  max-width: 60rem;
+  margin: auto;
+  padding: 2rem clamp(1.25rem, 5vw, 4rem) 6rem;
+  background: #000;
+}
+
+.star-wars-project nav { margin-bottom: clamp(4rem, 12vh, 8rem); font-family: "Fira Mono", monospace; }
+.star-wars-project header p { font-family: "Fira Mono", monospace; letter-spacing: .18em; text-transform: uppercase; }
+.star-wars-project h1 { max-width: 14ch; margin: .5rem 0; font-size: clamp(2.8rem, 8vw, 6rem); line-height: .92; }
+.star-wars-project header span { color: #fff; }
+.star-wars-project__media { position: relative; aspect-ratio: 16 / 9; margin: 4rem 0; }
 .star-wars-project__media img { object-fit: cover; }
-.star-wars-project article { font-size: 1.08rem; line-height: 1.8; }
+.star-wars-project article { color: #fff; font-size: 1.08rem; line-height: 1.8; }
 .star-wars-project article > * + * { margin-top: 1.25rem; }
-.star-wars-project__link { display: inline-block; margin-top: 2rem; color: #58d8f7 !important; }
+.star-wars-project__link { display: inline-block; margin-top: 2rem; }
 
-@keyframes star-intro { from { opacity: 0; } }
-@keyframes star-logo { from { opacity: 0; transform: translateZ(220px); } }
+@keyframes star-twinkle {
+  to { opacity: .2; transform: scale(.55); }
+}
+
+@keyframes star-intro {
+  0%, 100% { opacity: 0; }
+  18%, 82% { opacity: 1; }
+}
+
+@keyframes star-logo {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(5); }
+  75% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(.08); }
+}
+
+@keyframes star-reveal { to { opacity: 1; } }
+
+@keyframes star-crawl {
+  from { top: 100%; transform: translateX(-50%) rotateX(23deg); }
+  to { top: -260%; transform: translateX(-50%) rotateX(23deg); }
+}
 
 @media (max-width: 700px) {
+  .star-crawl { inset-inline: 0; perspective: 300px; }
+  .star-crawl__content { font-size: 1.3rem; }
   .star-wars__grid { grid-template-columns: 1fr; }
   .star-wars__footer { flex-direction: column; }
-  .star-wars__intro { margin-bottom: 8vh; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .star-wars__intro,
-  .star-wars__logo { animation: none; }
-  .star-wars__card { transition: none; }
+  .star-field i { animation: none; }
+  .star-opening__intro,
+  .star-opening__logo { display: none; }
+  .star-opening { height: auto; min-height: 100svh; padding: 5rem 1.5rem; overflow: visible; }
+  .star-crawl { position: relative; inset: auto; overflow: visible; perspective: none; opacity: 1; animation: none; }
+  .star-crawl__content { position: relative; top: auto; left: auto; width: min(760px, 100%); margin: auto; transform: none; animation: none; }
+  .star-opening__skip { display: none; }
 }
