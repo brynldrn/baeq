@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { getOrbitOffset, getSwipeDirection, stepIndex } from '@/lib/orbit.mjs'
+import { getOrbitOffset, getSwipeDirection, isOrbitVisible, stepIndex } from '@/lib/orbit.mjs'
 
 const orbitSlot = (offset) => {
   if (offset === 0) return 'active'
@@ -118,10 +118,12 @@ export default function PortfolioScene({ projects, children }) {
 
         <section className="orbit-stage" aria-label="Project orbit">
           {projects.map((project, index) => {
+            if (!isOrbitVisible(index, activeIndex, projects.length)) return null
+
             const offset = getOrbitOffset(index, activeIndex, projects.length)
             const slot = orbitSlot(offset)
             const active = slot === 'active'
-            const hidden = !active && Math.abs(offset) > 1
+            const hidden = Math.abs(offset) > 1
 
             return (
               <article

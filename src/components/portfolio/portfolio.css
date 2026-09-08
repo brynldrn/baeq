@@ -145,7 +145,7 @@
 
 .proof-list p {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   margin: 0;
   color: rgba(255, 255, 255, 0.68);
@@ -156,9 +156,12 @@
 .proof-list svg {
   flex: 0 0 auto;
   width: 19px;
+  height: 19px;
   color: var(--blue);
   stroke-width: 1.6;
 }
+
+.proof-list span { flex: 1; }
 
 .profile-actions {
   display: grid;
@@ -206,7 +209,7 @@
     opacity 520ms ease,
     filter 520ms ease,
     border-color 520ms ease;
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
 }
 
 .project-card[data-orbit="active"] {
@@ -457,10 +460,11 @@
   .profile-actions svg { width: 14px; }
   .orbit-stage { position: absolute; inset: min(46vh, 330px) 0 82px; height: auto; }
   .project-card { width: min(76vw, 315px); height: min(43dvh, 390px); border-radius: 24px; }
-  .project-card[data-orbit="previous"] { opacity: .55; filter: blur(1.5px); transform: translate(-138%, -57%) rotateY(12deg) scale(0.76); }
-  .project-card[data-orbit="next"] { opacity: .55; filter: blur(1.5px); transform: translate(38%, -57%) rotateY(-12deg) scale(0.76); }
+  .project-card[data-orbit="previous"] { opacity: .55; transform: translate(-138%, -57%) rotateY(12deg) scale(0.76); }
+  .project-card[data-orbit="next"] { opacity: .55; transform: translate(38%, -57%) rotateY(-12deg) scale(0.76); }
   .project-card[data-orbit="far-previous"] { transform: translate(-90%, -105%) scale(0.5); }
   .project-card[data-orbit="far-next"] { transform: translate(-10%, 5%) scale(0.5); }
+  .project-card[data-orbit] { filter: none; }
   .project-visual { height: 61%; border-radius: 17px; }
   .project-copy { padding: 8px 19px 16px; }
   .project-copy h2 { margin-top: 8px; font-size: 21px; }

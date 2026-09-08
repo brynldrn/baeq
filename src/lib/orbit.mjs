@@ -17,3 +17,7 @@ export function getOrbitOffset(index, activeIndex, count) {
 
   return offset
 }
+
+export function isOrbitVisible(index, activeIndex, count) {
+  return count > 0 && Math.abs(getOrbitOffset(index, activeIndex, count)) <= 2
+}
