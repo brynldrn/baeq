@@ -198,6 +198,8 @@
   z-index: 10;
   top: 50%;
   left: 50%;
+  display: flex;
+  flex-direction: column;
   width: min(390px, 36vw);
   height: min(570px, 63vh);
   overflow: hidden;
@@ -255,7 +257,9 @@
 
 .project-visual {
   position: relative;
-  height: 66%;
+  flex: 1 1 66%;
+  min-height: 0;
+  height: auto;
   margin: 10px;
   overflow: hidden;
   border-radius: 22px;
@@ -308,7 +312,7 @@
 .system-node-one { transform: translate(80px, -56px); }
 .system-node-two { transform: translate(-62px, 82px); }
 
-.project-copy { padding: 13px 24px 22px; }
+.project-copy { flex: 0 0 auto; padding: 13px 24px 22px; }
 .project-meta { display: flex; justify-content: space-between; color: var(--blue); font-size: 10px; letter-spacing: 0.1em; }
 .project-copy h2 { margin: 12px 0 5px; font-size: clamp(22px, 2vw, 29px); line-height: 1.02; letter-spacing: -0.035em; }
 .project-copy > p { margin: 0; color: rgba(255, 255, 255, 0.56); font-size: 12px; }
@@ -433,7 +437,7 @@
   .gesture-cue { display: none; }
   .orbit-stage { height: calc(100dvh - 106px); }
   .project-card { width: min(300px, 34vw); height: min(300px, calc(100dvh - 106px)); }
-  .project-visual { height: 55%; }
+  .project-visual { flex: 1 1 auto; height: auto; }
   .project-copy { padding: 7px 18px 12px; }
   .project-copy h2 { margin: 7px 0 3px; font-size: 18px; }
   .project-stack,
@@ -464,7 +468,7 @@
   .project-card[data-orbit="far-previous"] { transform: translate(-90%, -105%) scale(0.5); }
   .project-card[data-orbit="far-next"] { transform: translate(-10%, 5%) scale(0.5); }
   .project-card[data-orbit] { filter: none; }
-  .project-visual { height: 61%; border-radius: 17px; }
+  .project-visual { flex: 1 1 61%; height: auto; border-radius: 17px; }
   .project-copy { padding: 8px 19px 16px; }
   .project-copy h2 { margin-top: 8px; font-size: 21px; }
   .project-stack { margin-top: 9px; }
@@ -495,7 +499,7 @@
   .profile-actions a { min-height: 32px; font-size: 9px; }
   .orbit-stage { inset: 295px 0 70px; }
   .project-card { height: min(39dvh, 300px); }
-  .project-visual { height: 56%; }
+  .project-visual { flex-basis: 56%; }
   .project-copy h2 { font-size: 18px; }
   .project-stack { display: none; }
 }
