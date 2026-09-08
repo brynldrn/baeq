@@ -40,6 +40,16 @@ export default function PortfolioScene({ projects, children }) {
   }, [projects.length])
 
   useEffect(() => {
+    if (typeof window === 'undefined') return undefined
+
+    const earlyIntent = window.__portfolioEarlyIntent
+    const direction = earlyIntent?.consume?.()
+    if (!detailOpen && direction) queueMicrotask(() => move(direction))
+    earlyIntent?.cleanup?.()
+    return undefined
+  }, [detailOpen, move])
+
+  useEffect(() => {
     if (detailOpen) return undefined
 
     const onKeyDown = (event) => {
