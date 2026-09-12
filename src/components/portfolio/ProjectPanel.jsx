@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 import ReactMarkdown from 'react-markdown'
 
-export default function ProjectPanel({ project }) {
+export default function ProjectPanel({ project, returnPath = '/' }) {
   const closeRef = useRef(null)
   const router = useRouter()
   const reduceMotion = useReducedMotion()
@@ -18,7 +18,7 @@ export default function ProjectPanel({ project }) {
     closeRef.current?.focus()
 
     const onKeyDown = (event) => {
-      if (event.key === 'Escape') router.push('/')
+      if (event.key === 'Escape') router.push(returnPath)
     }
 
     window.addEventListener('keydown', onKeyDown)
@@ -26,7 +26,7 @@ export default function ProjectPanel({ project }) {
       window.removeEventListener('keydown', onKeyDown)
       if (previousFocus instanceof HTMLElement) previousFocus.focus()
     }
-  }, [router])
+  }, [returnPath, router])
 
   return (
     <AnimatePresence>
@@ -41,7 +41,7 @@ export default function ProjectPanel({ project }) {
         transition={{ type: reduceMotion ? 'tween' : 'spring', stiffness: 220, damping: 26 }}
       >
         <header className="panel-header">
-          <Link href="/" ref={closeRef} className="panel-close" aria-label="Close project"><X /></Link>
+          <Link href={returnPath} ref={closeRef} className="panel-close" aria-label="Close project"><X /></Link>
           <div className="panel-index">{project.year} / {project.position}</div>
         </header>
 
@@ -62,7 +62,7 @@ export default function ProjectPanel({ project }) {
             <div className="project-markdown"><ReactMarkdown>{project.longMd}</ReactMarkdown></div>
             <div className="panel-actions">
               {project.url && <a href={project.url} target="_blank" rel="noreferrer">Visit project <ArrowUpRight size={17} /></a>}
-              <Link href="/"><ArrowLeft size={17} /> Back to orbit</Link>
+              <Link href={returnPath}><ArrowLeft size={17} /> Back to orbit</Link>
             </div>
           </div>
         </div>

@@ -37,7 +37,7 @@ export default async function StarWarsPage() {
       </section>
 
       <footer className="star-wars__footer">
-        <Link href="/">Return to the 2026 experience</Link>
+        <Link href="/">Return to the main site</Link>
         <span>Made with ❤️ · May the source be with you.</span>
       </footer>
     </main>

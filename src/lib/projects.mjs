@@ -26,7 +26,7 @@ export function normalizeProject(project) {
   return {
     id: project.id,
     name: project.name,
-    year: project.year ?? '',
+    year: String(project.year ?? ''),
     position: project.position ?? '',
     url: project.url ?? '',
     longMd: project.longMd ?? '',

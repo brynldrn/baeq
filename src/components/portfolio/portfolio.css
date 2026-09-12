@@ -12,7 +12,11 @@
   color: #f5f7fa;
   isolation: isolate;
   touch-action: none;
+  font-family: var(--font-sans), sans-serif;
 }
+
+.portfolio-shell a { color: inherit; text-decoration: none; }
+.portfolio-shell button { color: inherit; font: inherit; }
 
 .portfolio-background { display: contents; }
 

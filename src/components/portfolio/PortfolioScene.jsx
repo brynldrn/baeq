@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, BriefcaseBusiness, ChevronLeft, ChevronRight, Code2, Cpu, Layers3, Mouse, ShieldCheck, Star, Users2 } from 'lucide-react'
+import { ArrowRight, BriefcaseBusiness, ChevronLeft, ChevronRight, Code2, Cpu, House, Layers3, Mouse, ShieldCheck, Star, Users2 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -27,14 +27,14 @@ function SystemVisual({ index }) {
   )
 }
 
-export default function PortfolioScene({ projects, children }) {
+export default function PortfolioScene({ projects, children, basePath = '' }) {
   const pathname = usePathname()
-  const initialIndex = Math.max(0, projects.findIndex(({ id }) => pathname === `/projects/${id}`))
+  const initialIndex = Math.max(0, projects.findIndex(({ id }) => pathname === `${basePath}/projects/${id}`))
   const [activeIndex, setActiveIndex] = useState(initialIndex)
   const lastWheelAt = useRef(0)
   const wheelAccumulator = useRef({})
   const pointerStartY = useRef(0)
-  const detailOpen = pathname.startsWith('/projects/')
+  const detailOpen = pathname.startsWith(`${basePath}/projects/`)
 
   const move = useCallback((direction) => {
     setActiveIndex((index) => stepIndex(index, direction, projects.length))
@@ -117,13 +117,13 @@ export default function PortfolioScene({ projects, children }) {
           <div>
             <p className="eyebrow">BAEQ / 2026</p>
             <h1 id="portfolio-title">Bryan Aldrin<br />Quinalayo</h1>
-            <p className="role">Senior Software Engineer</p>
+            <p className="role">Senior Full-Stack Software Engineer</p>
           </div>
 
           <div className="proof-list">
-            <p><Cpu /><span>10+ Years Enterprise React / Next.js Architecture</span></p>
+            <p><Cpu /><span>10+ Years Full-Stack React / Next.js Architecture</span></p>
             <p><ShieldCheck /><span>Technical Leadership & Scalable Product Delivery</span></p>
-            <p><Code2 /><span>TypeScript, Supabase & Performance Optimization</span></p>
+            <p><Code2 /><span>TypeScript, React Native, Expo & Supabase</span></p>
             <p><Users2 /><span>Mentorship & Code Quality Engineering</span></p>
           </div>
 
@@ -149,7 +149,7 @@ export default function PortfolioScene({ projects, children }) {
                 key={project.id}
               >
                 {active ? (
-                  <Link className="card-hit-area" href={`/projects/${project.id}`} aria-label={`Open ${project.name}`} />
+                  <Link className="card-hit-area" href={`${basePath}/projects/${project.id}`} aria-label={`Open ${project.name}`} />
                 ) : (
                   <button className="card-hit-area" onClick={() => setActiveIndex(index)} disabled={hidden} aria-label={`Focus ${project.name}`} />
                 )}
@@ -193,6 +193,7 @@ export default function PortfolioScene({ projects, children }) {
       </div>
 
       <nav className="portfolio-nav glass" aria-label="Portfolio links">
+        <Link href="/" aria-label="Main site"><House /></Link>
         <a href="https://www.linkedin.com/in/bryan-aldrin-quinalayo/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false" data-brand="linkedin"><circle cx="4" cy="4" r="2" /><rect width="4" height="12" x="2" y="9" /><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" /></svg></a>
         <a href="https://github.com/brynldrn" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" data-brand="github"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.293-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.105 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.81 1.102.81 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg></a>
         <Link href="/star-wars" aria-label="Legacy Star Wars portfolio"><Star /></Link>

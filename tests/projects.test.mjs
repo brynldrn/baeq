@@ -19,7 +19,7 @@ test('normalizeProject supplies safe optional values', () => {
   }), {
     id: 'project-1',
     name: 'Project One',
-    year: 2026,
+    year: '2026',
     position: 'Senior Software Engineer',
     url: '',
     longMd: '',
