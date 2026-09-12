@@ -1,0 +1,966 @@
+[
+  {
+    "id": "kitatrack",
+    "name": "KitaTrack",
+    "year": "2026",
+    "position": "Creator & Developer",
+    "url": "https://kitatrack-ph.com",
+    "summary": "An 8% tax tracker and quarterly tax calculator for Filipino freelancers on the flat rate.",
+    "stack": [
+      "Expo",
+      "SQLite",
+      "Supabase"
+    ],
+    "tech": "Expo, SQLite, Supabase",
+    "longMd": "KitaTrack helps Filipino freelancers log income, track Form 2307 credits, and prepare for every quarterly filing deadline with a clear view of what they owe.",
+    "visual": "image",
+    "siteLogo": null,
+    "imageCap": {
+      "url": "/media/projects/kitatrack/cover.png",
+      "width": 1904,
+      "height": 1045,
+      "mimeType": "image/png"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/kitatrack/gallery-01-dashboard-3.webp",
+        "mimeType": "image/webp"
+      },
+      {
+        "url": "/media/projects/kitatrack/gallery-02-income-3.webp",
+        "mimeType": "image/webp"
+      },
+      {
+        "url": "/media/projects/kitatrack/gallery-03-taxes-3.webp",
+        "mimeType": "image/webp"
+      },
+      {
+        "url": "/media/projects/kitatrack/gallery-04-profile-3.webp",
+        "mimeType": "image/webp"
+      }
+    ]
+  },
+  {
+    "id": "daycare-management-platform",
+    "name": "Daycare Management Platform",
+    "year": "2023—Now",
+    "position": "Technical Lead",
+    "url": "",
+    "summary": "A real-time school operations platform connecting administrators, teachers, and parents.",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "ShadCN",
+      "Zustand"
+    ],
+    "longMd": "Led architecture and technical direction for schedules, student records, and real-time messaging across a multi-role education platform.",
+    "visual": "system",
+    "tech": "Next.js, TypeScript, ShadCN, Zustand",
+    "siteLogo": null,
+    "imageCap": null,
+    "gallery": []
+  },
+  {
+    "id": "mikon-web-app-v2",
+    "name": "Mikon Web App v2",
+    "year": "2023",
+    "position": "Technical Lead",
+    "url": "",
+    "summary": "A ground-up Next.js rebuild with a new service layer and a faster, clearer product experience.",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "REST",
+      "AWS"
+    ],
+    "longMd": "Led the frontend rebuild of an enterprise customer portal, introducing a dedicated service layer, stronger performance, and a more maintainable product foundation.",
+    "visual": "system",
+    "tech": "Next.js, TypeScript, REST, AWS",
+    "siteLogo": null,
+    "imageCap": null,
+    "gallery": []
+  },
+  {
+    "id": "bry-shai-wedding-website",
+    "name": "Bry & Shai Wedding Website",
+    "year": "2025",
+    "position": "Husband",
+    "url": "https://bry-shai.vercel.app",
+    "summary": "A personal wedding website bringing the story, details, and celebration together in one place.",
+    "tech": "Fullstack",
+    "stack": [
+      "React",
+      "NextJS",
+      "TypeScript"
+    ],
+    "longMd": "A personal wedding website bringing the story, details, and celebration together in one place.",
+    "visual": "image",
+    "siteLogo": {
+      "url": "/media/projects/bry-shai-wedding-website/site-logo.png",
+      "width": 381,
+      "height": 315,
+      "mimeType": "image/png"
+    },
+    "imageCap": {
+      "url": "/media/projects/bry-shai-wedding-website/cover.png",
+      "width": 1909,
+      "height": 1030,
+      "mimeType": "image/png"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/bry-shai-wedding-website/gallery-01.png",
+        "width": 1903,
+        "height": 1026,
+        "mimeType": "image/png"
+      }
+    ]
+  },
+  {
+    "id": "whoop",
+    "name": "WHOOP Year in Review",
+    "year": "2021",
+    "position": "Front End Developer",
+    "url": "https://whoop.com",
+    "summary": "A personalized, data-driven year-in-review experience with generated video.",
+    "tech": "React, Remotion, AWS",
+    "stack": [
+      "Gatsby",
+      "Prismic",
+      "GraphQL",
+      "Remotion"
+    ],
+    "longMd": "### **Context**\nWHOOP wanted a customized Year-In Review for each of their customers and we made it applying the latest React and AWS technologies.\n\n### **Project Details**\nWHOOP landing page is made with React and all backend services provided by AWS Lambda. Since the video sequences are customized for each and every member, we had to make them swappable as React Components. The only way to do this is by using [Remotion](https://www.remotion.dev/). Remotion is a very robust library for creating videos from React Components. It was at its early stages by the time we developed the project so we had to work closely with the library maintainers. I guess the only challenge here is to perfect the sequences by the millisecond since the design team envisioned it as is.",
+    "visual": "image",
+    "siteLogo": {
+      "url": "/media/projects/whoop/site-logo.png",
+      "width": 126,
+      "height": 126,
+      "mimeType": "image/png"
+    },
+    "imageCap": {
+      "url": "/media/projects/whoop/cover.png",
+      "width": 1937,
+      "height": 1310,
+      "mimeType": "image/png"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/whoop/cover.png",
+        "width": 1937,
+        "height": 1310,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/whoop/gallery-02.png",
+        "width": 1933,
+        "height": 1304,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/whoop/gallery-03.png",
+        "width": 1939,
+        "height": 1305,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/whoop/gallery-04.png",
+        "width": 1934,
+        "height": 1308,
+        "mimeType": "image/png"
+      }
+    ]
+  },
+  {
+    "id": "rally",
+    "name": "Rally.io",
+    "year": "2021",
+    "position": "Frontend Developer",
+    "url": "https://rally.io",
+    "summary": "Two connected Next.js experiences powered by Contentful, GraphQL, and static generation.",
+    "tech": "NextJS, Contentful, GraphQL",
+    "stack": [
+      "Next.js",
+      "Contentful",
+      "GraphQL",
+      "SSG"
+    ],
+    "longMd": "### **Context:**\n\nRally is an online platform for content creators to create and host their very own cryptocurrency/NFT. It allows any member to create their own coins even with no crypto knowledge. It also allows seamless integration with other apps across the web, opening a lot more possibilities and utilization. \n\n### **Project Details:**\n\nIt was quite challenging knowing that everyone is not yet accustomed to NextJS. It also added that Contentful was quite the work since we had numerous buggy encounters. However, despite the bugs and hardships, we had covered everything and gracefully coded the whole thing. We also managed to create efficient GraphQL queries knowing that Contentful itself has several restrictions in depth and query size. ",
+    "visual": "image",
+    "siteLogo": {
+      "url": "/media/projects/rally/site-logo.png",
+      "width": 150,
+      "height": 150,
+      "mimeType": "image/png"
+    },
+    "imageCap": {
+      "url": "/media/projects/rally/cover.png",
+      "width": 1653,
+      "height": 804,
+      "mimeType": "image/png"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/rally/gallery-01.png",
+        "width": 1654,
+        "height": 848,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/rally/gallery-02.png",
+        "width": 1656,
+        "height": 845,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/rally/gallery-03.png",
+        "width": 1652,
+        "height": 850,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/rally/gallery-04.png",
+        "width": 1654,
+        "height": 846,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/rally/gallery-05.png",
+        "width": 1655,
+        "height": 804,
+        "mimeType": "image/png"
+      }
+    ]
+  },
+  {
+    "id": "productivity-extension",
+    "name": "Internal Productivity Extension",
+    "year": "2021",
+    "position": "Hackathon · 1st Place",
+    "url": "",
+    "summary": "A browser workflow joining time tracking, Jira logging, and Slack in one focused tool.",
+    "stack": [
+      "React",
+      "Firebase",
+      "Jira API",
+      "Slack API"
+    ],
+    "longMd": "Built a browser extension that combined internal time tracking, Jira logging, and Slack integration. The project won first place at the company hackathon.",
+    "visual": "system",
+    "tech": "React, Firebase, Jira API, Slack API",
+    "siteLogo": null,
+    "imageCap": null,
+    "gallery": []
+  },
+  {
+    "id": "bea-neil-wedding-website",
+    "name": "Bea & Neil Wedding Website",
+    "year": "2025",
+    "position": "Senior Software Engineer",
+    "url": "https://bea-and-neil-wedding.vercel.app/",
+    "summary": "Wedding website written in Next JS, Tailwind, Framer Motion and integrated with Google Sheets API via Server Actions",
+    "tech": "React, Next JS, Tailwind, Framer Motion",
+    "stack": [
+      "React",
+      "TypeScript",
+      "NextJS"
+    ],
+    "longMd": "Wedding website written in Next JS, Tailwind, Framer Motion and integrated with Google Sheets API via Server Actions",
+    "visual": "image",
+    "siteLogo": {
+      "url": "/media/projects/bea-neil-wedding-website/site-logo.svg",
+      "mimeType": "image/svg+xml"
+    },
+    "imageCap": {
+      "url": "/media/projects/bea-neil-wedding-website/cover.png",
+      "width": 4022,
+      "height": 2502,
+      "mimeType": "image/png"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/bea-neil-wedding-website/gallery-01.png",
+        "width": 4020,
+        "height": 2502,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bea-neil-wedding-website/gallery-02.png",
+        "width": 4016,
+        "height": 2494,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bea-neil-wedding-website/gallery-03.png",
+        "width": 4024,
+        "height": 2494,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bea-neil-wedding-website/site-logo.png",
+        "width": 32,
+        "height": 44,
+        "mimeType": "image/png"
+      }
+    ]
+  },
+  {
+    "id": "primis-bank",
+    "name": "Primis Bank",
+    "year": "2021",
+    "position": "Full Stack Web Developer",
+    "url": "https://primisbank.com",
+    "summary": "Primis Bank project was a redesign and re-brand of Sonabank. The site is made with the latest build of Sage and the latest JS technology.",
+    "tech": "Sage, WordPress, JS, HTML, CSS",
+    "stack": [
+      "WordPress",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "longMd": "### **Context:**\n\nIt was another client for the New York team and we're going with the usual Sage setup. This time the project was full of functionalities and not many difficult designs.\n\n### **Project Details:**\n\nThe project was a redesign and a re-brand of Sonabank. The usual team was set up with me being the Full Stack Developer (gluing the front and back end together). With the vast experience of our team, we were able to complete all complicated functionalities of the site. One functionality standing out was the Location Map. It was our first experience with Google's Distance Matrix API and it was fun! It was a great relief and reward when we completed the distance calculation and sorting.",
+    "visual": "image",
+    "siteLogo": {
+      "url": "/media/projects/primis-bank/site-logo.png",
+      "width": 180,
+      "height": 180,
+      "mimeType": "image/png"
+    },
+    "imageCap": {
+      "url": "/media/projects/primis-bank/cover.png",
+      "width": 1647,
+      "height": 850,
+      "mimeType": "image/png"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/primis-bank/gallery-01.png",
+        "width": 1649,
+        "height": 850,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/primis-bank/gallery-02.png",
+        "width": 1647,
+        "height": 850,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/primis-bank/gallery-03.png",
+        "width": 1645,
+        "height": 853,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/primis-bank/gallery-04.png",
+        "width": 1649,
+        "height": 849,
+        "mimeType": "image/png"
+      }
+    ]
+  },
+  {
+    "id": "sands",
+    "name": "Sands",
+    "year": "2020",
+    "position": "Full Stack Developer",
+    "url": "https://sands.com",
+    "summary": "Sands Redesign was one of the first Adobe Experience Manager (AEM) projects of the company. I worked on the front-end side of this one.",
+    "tech": "AEM, JS, HTML, CSS",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "longMd": "### **Context:**\n\nIt was one of the first tests of creating an AEM project. We were all quite surprised with how the back-end looks like but front-end-wise, everything was smooth.\n\n### **Project Details:**\n\nThe entire development was done with AEM's ecosystem so it was quite the experience. Front-end was made still with the latest JS technologies complementing the \"deep-to-the-bone\" implementation of the AEM back-end. ",
+    "visual": "image",
+    "siteLogo": {
+      "url": "/media/projects/sands/site-logo.jpg",
+      "width": 2215,
+      "height": 800,
+      "mimeType": "image/jpeg"
+    },
+    "imageCap": {
+      "url": "/media/projects/sands/cover.png",
+      "width": 1649,
+      "height": 846,
+      "mimeType": "image/png"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/sands/gallery-01.png",
+        "width": 1650,
+        "height": 847,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/sands/gallery-02.png",
+        "width": 1648,
+        "height": 847,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/sands/gallery-03.png",
+        "width": 1650,
+        "height": 847,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/sands/gallery-05.png",
+        "width": 1546,
+        "height": 276,
+        "mimeType": "image/png"
+      }
+    ]
+  },
+  {
+    "id": "bustle-rule-breakers",
+    "name": "Bustle Rule Breakers",
+    "year": "2019",
+    "position": "Full Stack Developer",
+    "url": "https://rulebreakers-2019.bustle.com",
+    "summary": "Bustle Rule Breakers was my first actual React project. I'm in a team of 2 developers and we worked hand in hand building the site as light as possible.",
+    "tech": "React, PreactJS, HTML, CSS",
+    "stack": [
+      "React",
+      "JavaScript"
+    ],
+    "longMd": "### **Context:**\n\nThe goal was to create a light website, no heavy plugins, no heavy editing, just pure JS. We then decided to incorporate React for its core but then went with Preact to lighten the build more.\n\n### **Project Details:**\n\nIt was a one-page site built to promote Bustle's campaign: Rule Breakers. This was the first time we used Preact on top of React so we were astonished at how small the build was when we submitted it. Every part of the site is meant to be loud, especially the colors.",
+    "visual": "image",
+    "siteLogo": {
+      "url": "/media/projects/bustle-rule-breakers/site-logo.png",
+      "width": 126,
+      "height": 126,
+      "mimeType": "image/png"
+    },
+    "imageCap": {
+      "url": "/media/projects/bustle-rule-breakers/cover.png",
+      "width": 1544,
+      "height": 785,
+      "mimeType": "image/png"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/bustle-rule-breakers/gallery-01.png",
+        "width": 1541,
+        "height": 786,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bustle-rule-breakers/gallery-02.png",
+        "width": 1538,
+        "height": 782,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bustle-rule-breakers/gallery-03.png",
+        "width": 1542,
+        "height": 781,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bustle-rule-breakers/gallery-04.png",
+        "width": 1541,
+        "height": 790,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bustle-rule-breakers/gallery-05.png",
+        "width": 1543,
+        "height": 786,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bustle-rule-breakers/gallery-06.png",
+        "width": 1541,
+        "height": 781,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bustle-rule-breakers/gallery-07.png",
+        "width": 1540,
+        "height": 779,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bustle-rule-breakers/gallery-08.png",
+        "width": 1543,
+        "height": 782,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bustle-rule-breakers/gallery-10.png",
+        "width": 3358,
+        "height": 1664,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bustle-rule-breakers/gallery-11.png",
+        "width": 3356,
+        "height": 1654,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bustle-rule-breakers/gallery-12.png",
+        "width": 3360,
+        "height": 1664,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/bustle-rule-breakers/gallery-13.png",
+        "width": 214,
+        "height": 70,
+        "mimeType": "image/png"
+      }
+    ]
+  },
+  {
+    "id": "new-center",
+    "name": "New Center",
+    "year": "2018",
+    "position": "Front End Developer",
+    "url": "https://newcenter.org",
+    "summary": "New Center Redesign. Using WordPress with Twig templating and modular Vanilla JS approach.",
+    "tech": "Wordpress, JS, CSS, HTML, Twig",
+    "stack": [
+      "WordPress",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "longMd": "### **Context:**\n\nNew Center is powered by WordPress and already has a theme built. This time, a new design was proposed and I was part of the team that made it. It was one of the projects that made us take extra hours in the office due to the short timeframe given.\n\n### **Project Details:**\n\nMade with WordPress and enhanced using Twig templating system. I was in charge of the Front End of the site, implementing the natively available CSS Grids. ",
+    "visual": "image",
+    "siteLogo": {
+      "url": "/media/projects/new-center/site-logo.jpg",
+      "width": 1000,
+      "height": 1000,
+      "mimeType": "image/jpeg"
+    },
+    "imageCap": {
+      "url": "/media/projects/new-center/cover.png",
+      "width": 1280,
+      "height": 688,
+      "mimeType": "image/png"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/new-center/gallery-01.png",
+        "width": 1277,
+        "height": 608,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/new-center/gallery-02.png",
+        "width": 1279,
+        "height": 687,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/new-center/gallery-03.png",
+        "width": 1280,
+        "height": 687,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/new-center/gallery-04.png",
+        "width": 1276,
+        "height": 687,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/new-center/gallery-05.png",
+        "width": 1280,
+        "height": 688,
+        "mimeType": "image/png"
+      }
+    ]
+  },
+  {
+    "id": "clear-labs-phase-2",
+    "name": "Clear Labs Phase 2",
+    "year": "2018",
+    "position": "Front End Developer",
+    "url": "https://clearlabs.com",
+    "summary": "Clear Labs Phase 2 focuses on additional pages and functionalities. The site is made with WordPress and Vanilla JS (modular)",
+    "tech": "Wordpress, JS",
+    "stack": [
+      "WordPress",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "longMd": "### **Context:**\n\nI've handled Clear Labs on the 2nd phase where there isn't much left to do but additional content. The additions focus on creating a blog archive page and resources page.\n\n### **Project Details:**\n\nThe site is made with WordPress and as usual, a modular Vanilla JS which is really easy to maintain. I have worked for the front end of the site this time since there isn't much to fix with the back end. Any integrations were also made by me.",
+    "visual": "image",
+    "siteLogo": {
+      "url": "/media/projects/clear-labs-phase-2/site-logo.png",
+      "width": 300,
+      "height": 300,
+      "mimeType": "image/png"
+    },
+    "imageCap": {
+      "url": "/media/projects/clear-labs-phase-2/cover.png",
+      "width": 1280,
+      "height": 600,
+      "mimeType": "image/png"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/clear-labs-phase-2/gallery-01.png",
+        "width": 1280,
+        "height": 689,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/clear-labs-phase-2/gallery-02.png",
+        "width": 1280,
+        "height": 600,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/clear-labs-phase-2/gallery-03.png",
+        "width": 1278,
+        "height": 686,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/clear-labs-phase-2/gallery-04.png",
+        "width": 1276,
+        "height": 684,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/clear-labs-phase-2/gallery-05.png",
+        "width": 1280,
+        "height": 684,
+        "mimeType": "image/png"
+      }
+    ]
+  },
+  {
+    "id": "the-jewish-museum-webapp",
+    "name": "The Jewish Museum WebApp",
+    "year": "2018",
+    "position": "Full Stack Developer",
+    "url": "",
+    "summary": "The Jewish Museum's web app is made with Angular 5 and is being used as an audio guide in the actual museum.",
+    "tech": "Angular 5",
+    "stack": [
+      "Angular",
+      "TypeScript"
+    ],
+    "longMd": "### **Context:**\n\nOne of the projects I've handled alone in Manila and the rest of the team members are from San Francisco. With the only dev here with Angular experience, I was placed instantly in the development team.\n\n### **Project Details:**\n\nThe app runs on browsers (preferably on mobile devices) with Angular 5. The app focuses on giving a complete tour of the museum to visitors without the need for a personal guide. It is also compatible with tablet devices as well as actual desktop browsers.",
+    "visual": "image",
+    "siteLogo": {
+      "url": "/media/projects/the-jewish-museum-webapp/site-logo.jpg",
+      "width": 468,
+      "height": 468,
+      "mimeType": "image/jpeg"
+    },
+    "imageCap": {
+      "url": "/media/projects/the-jewish-museum-webapp/cover.png",
+      "width": 313,
+      "height": 596,
+      "mimeType": "image/png"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/the-jewish-museum-webapp/gallery-01.png",
+        "width": 316,
+        "height": 598,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/the-jewish-museum-webapp/gallery-02.png",
+        "width": 315,
+        "height": 598,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/the-jewish-museum-webapp/gallery-03.png",
+        "width": 317,
+        "height": 600,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/the-jewish-museum-webapp/gallery-04.png",
+        "width": 318,
+        "height": 597,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/the-jewish-museum-webapp/gallery-05.png",
+        "width": 313,
+        "height": 596,
+        "mimeType": "image/png"
+      }
+    ]
+  },
+  {
+    "id": "morton-salt-erase-food-waste-campaign",
+    "name": "Morton Salt Erase Food Waste Campaign",
+    "year": "2018",
+    "position": "Full Stack Developer",
+    "url": "https://mortonsalt.com/walkherwalk",
+    "summary": "This campaign was my first project with my new employer. I was in charge of both the front end and back end of this project for the specific campaign.",
+    "tech": "Wordpress, JS",
+    "stack": [
+      "WordPress",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "longMd": "### **Context:**\n\nI moved to a new workplace, this time focused fully on the web. I was classified as a Full Stack Developer and was assigned to this project's specific campaign. It was about food waste awareness and the website is already fully working when I got the chance to handle it. All I did was set up the campaign and apply visual changes as detailed in the brief.\n\n### **Project Details:**\n\nThe site is running on WordPress and Vanilla JS where they are implementing modular javascript. Several changes are applied to match the given new design.",
+    "visual": "image",
+    "siteLogo": {
+      "url": "/media/projects/morton-salt-erase-food-waste-campaign/site-logo.webp",
+      "width": 560,
+      "height": 400,
+      "mimeType": "image/webp"
+    },
+    "imageCap": {
+      "url": "/media/projects/morton-salt-erase-food-waste-campaign/cover.png",
+      "width": 1277,
+      "height": 557,
+      "mimeType": "image/png"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/morton-salt-erase-food-waste-campaign/gallery-01.png",
+        "width": 1278,
+        "height": 627,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/morton-salt-erase-food-waste-campaign/gallery-02.png",
+        "width": 1277,
+        "height": 624,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/morton-salt-erase-food-waste-campaign/gallery-03.png",
+        "width": 1277,
+        "height": 626,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/morton-salt-erase-food-waste-campaign/gallery-04.png",
+        "width": 1277,
+        "height": 557,
+        "mimeType": "image/png"
+      },
+      {
+        "url": "/media/projects/morton-salt-erase-food-waste-campaign/gallery-05.png",
+        "width": 1274,
+        "height": 625,
+        "mimeType": "image/png"
+      }
+    ]
+  },
+  {
+    "id": "web-examination",
+    "name": "Web Examination",
+    "year": "2018",
+    "position": "Lead Developer",
+    "url": "",
+    "summary": "Web Examination is made with Spring Boot and is the second project I've handled as the Lead Developer.",
+    "tech": "Java, Spring Boot, HTML5, JS, CSS3, jQuery, SQL",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP"
+    ],
+    "longMd": "### **Context:**\n\nWeb Examination is the first in-house project of my former employer. It is supposed to be sold to companies as a solution for their online needs of an examination system. It supports an Administration panel as well as an actual examination view.\n\n### **Project Details:**\n\nThe project is made using Spring Boot, one of the most powerful J2EE frameworks free to use. It utilizes a free admin dashboard theme available for bootstrap. It supports a lot of administration features from creating examinees to generating reports. The sophisticated design proved to be one of the hardest parts of the development of this project, considering the team only consists of 5 members including me.",
+    "visual": "image",
+    "siteLogo": null,
+    "imageCap": {
+      "url": "/media/projects/web-examination/cover.jpg",
+      "width": 1903,
+      "height": 986,
+      "mimeType": "image/jpeg"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/web-examination/gallery-01.jpg",
+        "width": 1903,
+        "height": 957,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/web-examination/gallery-02.jpg",
+        "width": 1902,
+        "height": 961,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/web-examination/gallery-03.jpg",
+        "width": 1901,
+        "height": 961,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/web-examination/gallery-04.jpg",
+        "width": 1905,
+        "height": 910,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/web-examination/gallery-05.jpg",
+        "width": 1905,
+        "height": 961,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/web-examination/gallery-06.jpg",
+        "width": 1906,
+        "height": 961,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/web-examination/gallery-07.jpg",
+        "width": 1903,
+        "height": 961,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/web-examination/gallery-08.jpg",
+        "width": 1904,
+        "height": 957,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/web-examination/gallery-09.jpg",
+        "width": 1906,
+        "height": 958,
+        "mimeType": "image/jpeg"
+      }
+    ]
+  },
+  {
+    "id": "japan-karate-association",
+    "name": "Japan Karate Association",
+    "year": "2017",
+    "position": "Lead Developer",
+    "url": "https://jka.or.jp",
+    "summary": "JKA is the first official project I have worked on as the Lead developer. It's a little bit messy, considering being my first ever project on the field.",
+    "tech": "Wordpress, HTML5, CSS3, JS, Bootstrap, jQuery, PHP, Apache",
+    "stack": [
+      "WordPress",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "longMd": "### **Context:**\n\nJKA was one of the projects of my former company. It was my first lead project as a young WordPress Developer. The design was made by the Company's CEO. I did mostly both the Front End and Back End, as well as taking responsibility for delegating tasks to team members. \n\nThis is where my Leadership skills were most challenged since it is actually my first time handling a team. I was also in charge of creating Work Breakdown Structures as well as daily reports, besides coding.\n\n### **Project Details:**\n\nIt is an overhaul of the old JKA website (plain HTML). This time it is powered by WordPress and Bootstrap 3. This website supports multi-language (Japanese/English) switching which proved to be one of the hardest obstacles back then with only a few members working on the project with enough experience on the tech.\n",
+    "visual": "image",
+    "siteLogo": {
+      "url": "/media/projects/japan-karate-association/site-logo.png",
+      "width": 32,
+      "height": 32,
+      "mimeType": "image/png"
+    },
+    "imageCap": {
+      "url": "/media/projects/japan-karate-association/cover.jpg",
+      "width": 1902,
+      "height": 985,
+      "mimeType": "image/jpeg"
+    },
+    "gallery": [
+      {
+        "url": "/media/projects/japan-karate-association/cover.jpg",
+        "width": 1902,
+        "height": 985,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-02.jpg",
+        "width": 1903,
+        "height": 984,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-03.jpg",
+        "width": 1902,
+        "height": 984,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-04.jpg",
+        "width": 1903,
+        "height": 984,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-05.jpg",
+        "width": 1905,
+        "height": 984,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-06.jpg",
+        "width": 1903,
+        "height": 985,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-07.jpg",
+        "width": 1903,
+        "height": 984,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-08.jpg",
+        "width": 1903,
+        "height": 986,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-09.jpg",
+        "width": 1904,
+        "height": 985,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-10.jpg",
+        "width": 1903,
+        "height": 985,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-11.jpg",
+        "width": 1904,
+        "height": 984,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-12.jpg",
+        "width": 1905,
+        "height": 987,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-13.jpg",
+        "width": 1903,
+        "height": 985,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-14.jpg",
+        "width": 1904,
+        "height": 986,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-15.jpg",
+        "width": 1903,
+        "height": 984,
+        "mimeType": "image/jpeg"
+      },
+      {
+        "url": "/media/projects/japan-karate-association/gallery-16.jpg",
+        "width": 1903,
+        "height": 986,
+        "mimeType": "image/jpeg"
+      }
+    ]
+  }
+]

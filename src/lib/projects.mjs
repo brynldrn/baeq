@@ -1,65 +1,28 @@
-import { mergeFeaturedProjects } from './portfolio-projects.mjs'
-
-const endpoint = 'https://api-ap-northeast-1.graphcms.com/v2/cjqxhy3af88o801dnxok0ru3c/master'
-
-const query = `
-  query Projects {
-    projects(orderBy: year_DESC) {
-      id
-      name
-      year
-      url
-      position
-      longMd
-      imageCap { url }
-      gallery { id url }
-    }
-  }
-`
-
-let projectsRequest
+import projectData from '../data/projects.json' with { type: 'json' }
 
 export function normalizeProject(project) {
   if (!project?.id) throw new Error('Project ID is required')
   if (!project?.name) throw new Error('Project name is required')
 
   return {
-    id: project.id,
-    name: project.name,
+    ...project,
     year: String(project.year ?? ''),
     position: project.position ?? '',
     url: project.url ?? '',
+    summary: project.summary ?? '',
+    tech: project.tech ?? '',
+    stack: Array.isArray(project.stack) ? project.stack : [],
     longMd: project.longMd ?? '',
-    imageCap: project.imageCap?.url ? { url: project.imageCap.url } : null,
+    siteLogo: project.siteLogo?.url ? { ...project.siteLogo } : null,
+    imageCap: project.imageCap?.url ? { ...project.imageCap } : null,
     gallery: Array.isArray(project.gallery) ? project.gallery.filter((image) => image?.url) : [],
   }
 }
 
-async function requestProjects() {
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query }),
-    next: { revalidate: 3600 },
-  })
+const projects = projectData.map(normalizeProject)
 
-  if (!response.ok) throw new Error(`Project request failed with HTTP ${response.status}`)
-
-  const payload = await response.json()
-
-  if (payload.errors?.length) throw new Error(payload.errors[0].message)
-  if (!Array.isArray(payload.data?.projects)) throw new Error('Project response is missing projects')
-
-  return payload.data.projects.map(normalizeProject)
-}
-
-export function getProjects() {
-  projectsRequest ??= requestProjects().catch((error) => {
-    projectsRequest = undefined
-    throw error
-  })
-
-  return projectsRequest
+export async function getProjects() {
+  return projects
 }
 
 export async function getProject(id) {
@@ -68,7 +31,7 @@ export async function getProject(id) {
 }
 
 export async function getPortfolioProjects() {
-  return mergeFeaturedProjects(await getProjects())
+  return getProjects()
 }
 
 export async function getPortfolioProject(id) {
